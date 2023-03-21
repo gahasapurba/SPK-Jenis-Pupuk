@@ -34,11 +34,11 @@
                             <i class="lni lni-chevron-down"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
-                            <li>
+                            {{-- <li>
                                 <a href="{{ route('dashboard.user.index') }}">
                                     <i class="lni lni-user"></i> Ubah Profil
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="lni lni-exit"></i> Keluar
