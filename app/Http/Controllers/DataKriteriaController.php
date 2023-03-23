@@ -6,33 +6,33 @@ use Illuminate\Http\Request;
 
 class DataKriteriaController extends Controller
 {
-    // public function index()
-    // {
-    //     return view('pages.dashboard.dataKriteria.index');
-    // }
+    public function index()
+    {
+        return view('pages.admin.dataKriteria.index');
+    }
 
-    // public function addDataKriteria()
-    // {
-    //     return view('pages.dashboard.dataKriteria.addData');
-    // }
+    public function addDataKriteria()
+    {
+        return view('pages.admin.dataKriteria.add');
+    }
 
-    // public function editDataKriteria()
-    // {
-    //     return view('pages.dashboard.dataKriteria.editData');
-    // }
+    public function editDataKriteria()
+    {
+        return view('pages.admin.dataKriteria.edit');
+    }
 
-    // public function ProsesTambahDataKriteria()
-    // {
-    //     return redirect()->route('indexDataKriteria')->with(['success' => 'Data Berhasil Disimpan!']);
-    // }
+    public function ProsesTambahDataKriteria()
+    {
+        return redirect()->route('indexDataKriteria')->with(['success' => 'Data Berhasil Disimpan!']);
+    }
 
-    // public function ProsesEditDataKriteria()
-    // {
-    //     return redirect()->route('indexDataKriteria')->with(['success' => 'Data Berhasil Diupdate!']);
-    // }
+    public function ProsesEditDataKriteria()
+    {
+        return redirect()->route('indexDataKriteria')->with(['success' => 'Data Berhasil Diupdate!']);
+    }
 
-    // public function hapusData()
-    // {
-    //     return redirect()->route('indexDataKriteria')->with(['success' => 'Data Berhasil Dihapus!']);
-    // }
+    public function hapusData()
+    {
+        return redirect()->route('indexDataKriteria')->with(['success' => 'Data Berhasil Dihapus!']);
+    }
 }
