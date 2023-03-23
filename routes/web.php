@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\DataKriteriaController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin as Admin;
@@ -28,6 +26,14 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
     // Route Dashboard Admin
     Route::resource('admin', Admin\AdminController::class);
 
+    // datakriteria
+    Route::get('/indexDataKriteria', [Admin\DataKriteriaController::class, 'index'])->name('indexDataKriteria');
+    Route::get('/addDataKriteria', [Admin\DataKriteriaController::class, 'addDataKriteria'])->name('addDataKriteria');
+    Route::get('/editDataKriteria', [Admin\DataKriteriaController::class, 'editDataKriteria'])->name('editDataKriteria');
+    Route::get('/tambahData', [Admin\DataKriteriaController::class, 'ProsesTambahDataKriteria'])->name('tambahDataKriteria');
+    Route::get('/editData', [Admin\DataKriteriaController::class, 'ProsesEditDataKriteria'])->name('ubahDataKriteria');
+    Route::get('/hapusData', [Admin\DataKriteriaController::class, 'hapusData'])->name('hapusDataKriteria');
+
 });
 
 // Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya User
@@ -41,10 +47,4 @@ Route::middleware(['auth','verified','isUser'])->group(function () {
 
 });
 
-// datakriteria
-Route::get('/indexDataKriteria', [DataKriteriaController::class, 'index'])->name('indexDataKriteria');
-Route::get('/addDataKriteria', [DataKriteriaController::class, 'addDataKriteria'])->name('addDataKriteria');
-Route::get('/editDataKriteria', [DataKriteriaController::class, 'editDataKriteria'])->name('editDataKriteria');
-Route::get('/tambahData', [DataKriteriaController::class, 'ProsesTambahDataKriteria'])->name('tambahDataKriteria');
-Route::get('/editData', [DataKriteriaController::class, 'ProsesEditDataKriteria'])->name('ubahDataKriteria');
-Route::get('/hapusData', [DataKriteriaController::class, 'hapusData'])->name('hapusDataKriteria');
+
