@@ -8,7 +8,7 @@
         <ul>
             {{-- Dashboard --}}
             <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
-                <a href="#">
+                <a href="{{ route('dashboardAdmin') }}">
                     <span class="icon">
                         <i class="lni lni-home"></i>
                     </span>
