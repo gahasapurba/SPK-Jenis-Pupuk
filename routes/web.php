@@ -4,6 +4,8 @@ use App\Http\Controllers\DataKriteriaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin as Admin;
+use App\Http\Controllers\User as User;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,18 +18,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Route Autentikasi
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya Administrator
+Route::middleware(['auth','verified','isAdmin'])->group(function () {
 
-// dashboard admin
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboardAdmin');
+    // Route Dashboard Admin
+    Route::resource('admin', Admin\AdminController::class);
+
+});
+
+// Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya User
+
+Route::middleware(['auth','verified','isUser'])->group(function () {
+
+    Route::get('/', [User\DashboardController::class, 'index']);
+
+    // Route Dashboard User
+    Route::resource('dashboard', User\DashboardController::class);
+
+});
 
 // datakriteria
 Route::get('/indexDataKriteria', [DataKriteriaController::class, 'index'])->name('indexDataKriteria');
