@@ -63,6 +63,6 @@
         @include('includes.admin.script')
         @stack('addon-script')
         {{-- Sweet Alert --}}
-        @include('sweetalert::alert')
+        {{-- @include('sweetalert::alert') --}}
     </body>
 </html>

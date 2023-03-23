@@ -17,6 +17,15 @@
                     <span class="text">Dashboard</span>
                 </a>
             </li>
+            {{-- Data kriteria --}}
+            <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
+                <a href="{{ route('indexDataKriteria') }}">
+                    <span class="icon">
+                        <i class="lni lni-database"></i>
+                    </span>
+                    <span class="text">Data Kriteria</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>
