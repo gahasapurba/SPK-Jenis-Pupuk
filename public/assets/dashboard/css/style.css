@@ -1,0 +1,16 @@
+.kiri{
+    display: flex;
+    justify-content: space-between;
+}
+
+.awal{
+    font-size: 20px;
+    width: 100%;
+    background: #0B6623;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}

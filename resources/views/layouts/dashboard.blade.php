@@ -58,11 +58,13 @@
         </main>
         {{-- Theme --}}
         @include('includes.dashboard.theme')
+        {{-- modal --}}
+        @yield('modal')
         {{-- Script --}}
         @stack('prepend-script')
         @include('includes.dashboard.script')
         @stack('addon-script')
         {{-- Sweet Alert --}}
-        @include('sweetalert::alert')
+        {{-- @include('sweetalert::alert') --}}
     </body>
 </html>
