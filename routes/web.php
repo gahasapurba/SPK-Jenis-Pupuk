@@ -29,10 +29,10 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
     // datakriteria
     Route::get('/indexDataKriteria', [Admin\DataKriteriaController::class, 'index'])->name('indexDataKriteria');
     Route::get('/addDataKriteria', [Admin\DataKriteriaController::class, 'addDataKriteria'])->name('addDataKriteria');
-    Route::get('/editDataKriteria', [Admin\DataKriteriaController::class, 'editDataKriteria'])->name('editDataKriteria');
-    Route::get('/tambahData', [Admin\DataKriteriaController::class, 'ProsesTambahDataKriteria'])->name('tambahDataKriteria');
-    Route::get('/editData', [Admin\DataKriteriaController::class, 'ProsesEditDataKriteria'])->name('ubahDataKriteria');
-    Route::get('/hapusData', [Admin\DataKriteriaController::class, 'hapusData'])->name('hapusDataKriteria');
+    Route::get('/editDataKriteria/{id}', [Admin\DataKriteriaController::class, 'editDataKriteria'])->name('editDataKriteria');
+    Route::post('/tambahData', [Admin\DataKriteriaController::class, 'ProsesTambahDataKriteria'])->name('tambahDataKriteria');
+    Route::post('/editData', [Admin\DataKriteriaController::class, 'ProsesEditDataKriteria'])->name('ubahDataKriteria');
+    Route::post('/hapusData', [Admin\DataKriteriaController::class, 'hapusData'])->name('hapusDataKriteria');
 
 });
 

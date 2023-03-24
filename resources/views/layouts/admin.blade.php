@@ -58,6 +58,8 @@
         </main>
         {{-- Theme --}}
         @include('includes.admin.theme')
+        {{-- modal --}}
+        @yield('modal')
         {{-- Script --}}
         @stack('prepend-script')
         @include('includes.admin.script')
