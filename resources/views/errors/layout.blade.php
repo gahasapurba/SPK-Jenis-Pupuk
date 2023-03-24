@@ -32,10 +32,6 @@
                             <h1>@yield('code')</h1>
                             <h2>@yield('message')</h2>
                             <p>© {{ date('Y') }} {{ config('app.name') }}. @lang('Hak cipta dilindungi undang-undang.')</p>
-                            <div class="button">
-                                <a href="{{ route('/') }}" class="btn">Kembali Ke Beranda</a>
-                                <a href="{{ route('#') }}" class="btn alt">Hubungi Kami</a>
-                            </div>
                         </div>
                     </div>
                 </div>

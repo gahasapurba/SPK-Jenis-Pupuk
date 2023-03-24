@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SPK Jenis Pupuk (Dashboard) - @yield('title')</title>
+        <title>SPK Jenis Pupuk - @yield('title')</title>
         {{-- Style --}}
         @stack('prepend-style')
         @include('includes.dashboard.style')
@@ -32,7 +32,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb">
-                                                <a href="#">Dashboard&nbsp;</a>
+                                                <a href="{{ route('/') }}">Dashboard&nbsp;</a>
                                             </li>
                                             <li class="breadcrumb active" aria-current="page">
                                                 / @yield('title')
@@ -58,13 +58,13 @@
         </main>
         {{-- Theme --}}
         @include('includes.dashboard.theme')
-        {{-- modal --}}
+        {{-- Modal --}}
         @yield('modal')
         {{-- Script --}}
         @stack('prepend-script')
         @include('includes.dashboard.script')
         @stack('addon-script')
         {{-- Sweet Alert --}}
-        {{-- @include('sweetalert::alert') --}}
+        @include('sweetalert::alert')
     </body>
 </html>

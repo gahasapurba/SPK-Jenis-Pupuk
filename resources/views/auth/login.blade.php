@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -66,6 +66,103 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection --}}
+
+@extends('layouts.auth')
+@section('title')
+    Masuk
+@endsection
+@section('content')
+<div class="row g-0 auth-row">
+    <div class="col-lg-6">
+        <div class="auth-cover-wrapper bg-primary-100">
+            <div class="auth-cover">
+                <div class="title text-center">
+                    <h1 class="text-primary mb-10">Welcome Back</h1>
+                    <p class="text-medium">Sign in to your Existing account to continue</p>
+                </div>
+                <div class="cover-image">
+                    <img src="{{ asset('assets/dashboard/images/auth/signin-image.svg') }}" alt="Sign In 1" />
+                </div>
+                <div class="shape-image">
+                    <img src="{{ asset('assets/dashboard/images/auth/shape.svg') }}" alt="Sign In 2" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="signin-wrapper">
+            <div class="form-wrapper">
+                <h6 class="mb-15">Sign In Form</h6>
+                <p class="text-sm mb-25">Start creating the best possible user experience for you customers.</p>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-style-1">
+                                <label>Email</label>
+                                <input type="email" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-style-1">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" />
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-lg-12 col-md-6">
+                            <div class="form-check checkbox-style mb-30">
+                                <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="checkbox-remember"
+                                />
+                                <label
+                                class="form-check-label"
+                                for="checkbox-remember"
+                                >
+                                Remember me next time</label
+                                >
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-lg-12 col-md-6">
+                            <div
+                            class="
+                            text-start text-md-end text-lg-start text-xxl-end
+                            mb-30
+                            "
+                            >
+                                <a href="reset-password.html" class="hover-underline">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div
+                            class="
+                            button-group
+                            d-flex
+                            justify-content-center
+                            flex-wrap
+                            "
+                            >
+                                <button
+                                class="
+                                main-btn
+                                primary-btn
+                                btn-hover
+                                w-100
+                                text-center
+                                "
+                                >
+                                Sign In
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
