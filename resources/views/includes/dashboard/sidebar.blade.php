@@ -1,4 +1,5 @@
-<aside class="sidebar-nav-wrapper">
+<aside class="sidebar-nav-wrapper @auth @else active @endauth">
+    @auth
     <div class="navbar-logo">
         <a href="{{ route('dashboard.index') }}">
             <img src="{{ asset('assets/dashboard/images/logo/logo.svg') }}" alt="logo" />
@@ -17,5 +18,6 @@
             </li>
         </ul>
     </nav>
+    @endauth
 </aside>
 <div class="overlay"></div>

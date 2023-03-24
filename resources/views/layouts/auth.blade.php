@@ -12,10 +12,26 @@
         @stack('addon-style')
     </head>
     <body>
-        <main class="main-wrapper">
+        {{-- Sidebar --}}
+        @include('includes.dashboard.sidebar')
+        <main class="main-wrapper active">
+            {{-- Header --}}
+            @include('includes.dashboard.header')
             {{-- Pages --}}
             <section class="section">
                 <div class="container-fluid">
+                    <div class="title-wrapper pt-30">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="title mb-30">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="breadcrumb-wrapper mb-30">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @php
                         use RealRashid\SweetAlert\Facades\Alert;
                         if($errors->any())

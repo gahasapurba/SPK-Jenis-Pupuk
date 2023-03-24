@@ -32,7 +32,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb">
-                                                <a href="{{ route('/') }}">Dashboard&nbsp;</a>
+                                                <a href="/">Dashboard&nbsp;</a>
                                             </li>
                                             <li class="breadcrumb active" aria-current="page">
                                                 / @yield('title')
