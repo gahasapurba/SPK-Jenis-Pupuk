@@ -34,13 +34,13 @@ class AuthServiceProvider extends ServiceProvider
                 ->line('Harap lakukan verifikasi email dalam tempo 15 menit, setelah itu, email ini akan expired / tidak berlaku lagi. Jika anda merasa sedang tidak melakukan pendaftaran, maka abaikan email ini.');
         });
 
-        ResetPassword::toMailUsing(function ($notifiable, $url) {
-            return (new MailMessage)
-                ->subject('SPK Jenis Pupuk - Reset Password')
-                ->line('Anda menerima email ini karena kami mendeteksi adanya permintaan perubahan password atau reset password, dari akun anda.')
-                ->action('Reset Password', $url)
-                ->line('Email ini akan expired / tidak berlaku lagi dalam :count menit.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')])
-                ->line('Jika anda merasa sedang tidak melakukan permintaan reset password, maka abaikan email ini.');
-        });
+        // ResetPassword::toMailUsing(function ($notifiable, $url) {
+        //     return (new MailMessage)
+        //         ->subject('SPK Jenis Pupuk - Reset Password')
+        //         ->line('Anda menerima email ini karena kami mendeteksi adanya permintaan perubahan password atau reset password, dari akun anda.')
+        //         ->action('Reset Password', $url)
+        //         ->line('Email ini akan expired / tidak berlaku lagi dalam 15 menit.')
+        //         ->line('Jika anda merasa sedang tidak melakukan permintaan reset password, maka abaikan email ini.');
+        // });
     }
 }
