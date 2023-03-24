@@ -18,7 +18,7 @@ use App\Http\Controllers\User as User;
 
 // Route Autentikasi
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya Administrator
 Route::middleware(['auth','verified','isAdmin'])->group(function () {
@@ -46,5 +46,3 @@ Route::middleware(['auth','verified','isUser'])->group(function () {
     Route::resource('dashboard', User\DashboardController::class);
 
 });
-
-
