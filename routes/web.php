@@ -34,6 +34,11 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
     Route::post('/editData', [Admin\DataKriteriaController::class, 'ProsesEditDataKriteria'])->name('ubahDataKriteria');
     Route::post('/hapusData', [Admin\DataKriteriaController::class, 'hapusData'])->name('hapusDataKriteria');
 
+    // data subkriteria
+    Route::get('/indexSubkriteria', [Admin\SubkriteriaController::class, "index"])->name("indexSubkriteria");
+    Route::post('/tambahSubkriteria', [Admin\SubkriteriaController::class, 'prosesAddData'])->name('addSubriteria');
+    Route::post('/editSubkriteria', [Admin\SubkriteriaController::class, 'editSubkriteria'])->name('editSubkriteria');
+    Route::post('/hapusSubkriteria', [Admin\SubkriteriaController::class, 'hapusSubkriteria'])->name('hapusSubkriteria');
 });
 
 // Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya User

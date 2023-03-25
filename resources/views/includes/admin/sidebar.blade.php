@@ -26,6 +26,15 @@
                     <span class="text">Data Kriteria</span>
                 </a>
             </li>
+            {{-- Data Subkriteria --}}
+            <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
+                <a href="{{ route('indexSubkriteria') }}">
+                    <span class="icon">
+                        <i class="lni lni-tab"></i>
+                    </span>
+                    <span class="text">Data Subkriteria</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>

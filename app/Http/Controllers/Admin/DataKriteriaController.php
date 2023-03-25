@@ -10,6 +10,7 @@ class DataKriteriaController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
         $this->Kriteria = new Kriteria();
     }
 
