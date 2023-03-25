@@ -64,25 +64,25 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                        <div class="select-style-1">
-                            <label @error('jenis') class="text-danger" role="alert" @enderror> Jenis Kriteria @error('jenis')
-                                | {{ $message }}
-                            @enderror
-                            </label>
-                            <div class="select-position">
-                            <select name="jenis" class="light-bg @error('jenis') aaa @enderror">
-                                @if ($kritId->jenis == "benefit")
-                                    <option value="benefit">Benefit</option>
-                                    <option value="cost">Cost</option>
-                                @else
-                                    <option value="cost">Cost</option>
-                                    <option value="benefit">Benefit</option>
-                                @endif
+                            <div class="select-style-1">
+                                <label @error('jenis') class="text-danger" role="alert" @enderror> Jenis Kriteria @error('jenis')
+                                    | {{ $message }}
+                                @enderror
+                                </label>
+                                <div class="select-position">
+                                <select name="jenis" class="light-bg @error('jenis') aaa @enderror">
+                                    @if ($kritId->jenis == "benefit")
+                                        <option value="benefit">Benefit</option>
+                                        <option value="cost">Cost</option>
+                                    @else
+                                        <option value="cost">Cost</option>
+                                        <option value="benefit">Benefit</option>
+                                    @endif
 
-                            </select>
+                                </select>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     <!-- end col -->
                     <div class="col-12">
                     <div class="kiri">

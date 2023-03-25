@@ -83,7 +83,7 @@
       <!-- end card -->
     </div>
     <!-- end col -->
-  </div>
+</div>
 @endsection
 
 @section('modal')
