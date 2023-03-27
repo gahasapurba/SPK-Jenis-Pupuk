@@ -35,6 +35,15 @@
                     <span class="text">Data Subkriteria</span>
                 </a>
             </li>
+            {{-- Data Alternatif --}}
+            <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
+                <a href="{{ route('indexAlternatif') }}">
+                    <span class="icon">
+                        <i class="lni lni-package"></i>
+                    </span>
+                    <span class="text">Data Alternatif</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>
