@@ -41,4 +41,14 @@ class Subkriteria extends Model
         $subkriteria = Subkriteria::find($id);
         $subkriteria->delete();
     }
+
+    public function getJenisTanah()
+    {
+        $jenis_tanah = DB::table('kriteria')->where('nama_kriteria', 'Jenis Tanah')->get('id');
+        foreach ($jenis_tanah as $jenis)
+            $kode = $jenis->id;
+
+
+        return DB::table('subkriteria')->where('kriteria_id', $kode)->get();
+    }
 }

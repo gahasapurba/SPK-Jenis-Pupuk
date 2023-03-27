@@ -47,6 +47,12 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
     Route::get('/pagesEditAlternatif/{id}', [Admin\AlternatifController::class, 'pagesEditAlternatif'])->name('pagesEditAlternatif');
     Route::post('editAlternatif', [Admin\AlternatifController::class, 'editData'])->name('editAlternatif');
     Route::post('deleteAlternatif', [Admin\AlternatifController::class, 'delateData'])->name('deleteAlternatif');
+
+    // data penilain
+    Route::get('/indexPenilaian', [Admin\PenilaianController::class, 'index'])->name('indexPenilaian');
+    Route::get('/pagesAddPenilaian/{id}', [Admin\PenilaianController::class, 'pagesAddPenilaian'])->name('pagesAddPenilaian');
+    Route::post('/editPenilaian', [Admin\PenilaianController::class, 'addPenilaian'])->name('editPenilaian');
+    Route::get('/pagesEditPenilaian/{id}', [Admin\PenilaianController::class, 'pagesEditPenilaian'])->name('pagesEditPenilaian');
 });
 
 // Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya User

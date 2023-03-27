@@ -20,7 +20,6 @@
                             <input type="text" name="nama_alternatif" value="{{ old('nama_alternatif') }}" placeholder="Nama Data Alternatif" @error('nama_alternatif') class="aaa" @enderror>
                         </div>
                     </div>
-                    <div class="col-sm-12">
                 </div>
                 <!-- end col -->
                 <div class="col-12">

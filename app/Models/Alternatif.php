@@ -22,7 +22,7 @@ class Alternatif extends Model
 
     public function getData()
     {
-        return DB::table('alternatif')->orderBy('updated_at', 'DESC')->get();
+        return DB::table('alternatif')->orderBy('created_at', 'DESC')->get();
     }
 
     public function getDataEdit($id)
@@ -34,5 +34,11 @@ class Alternatif extends Model
     {
         $alternatif = Alternatif::find($id);
         $alternatif->delete();
+    }
+
+    // data penilaian
+    public function pagesPenilaian($id)
+    {
+        return DB::table('alternatif')->where('id', $id)->get();
     }
 }
