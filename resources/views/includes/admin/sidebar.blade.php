@@ -44,6 +44,15 @@
                     <span class="text">Data Alternatif</span>
                 </a>
             </li>
+            {{-- Data Penilaian --}}
+            <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
+                <a href="{{ route('indexPenilaian') }}">
+                    <span class="icon">
+                        <i class="lni lni-bookmark-alt"></i>
+                    </span>
+                    <span class="text">Data Penilaian</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>

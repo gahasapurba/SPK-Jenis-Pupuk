@@ -22,7 +22,7 @@ class Kriteria extends Model
 
     public function getData()
     {
-        return DB::table('kriteria')->orderBy('updated_at', 'DESC')->get();
+        return DB::table('kriteria')->orderBy('cd_kriteria', 'ASC')->get();
     }
 
     public function getEditData($id)

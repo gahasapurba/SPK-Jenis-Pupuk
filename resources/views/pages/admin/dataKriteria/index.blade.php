@@ -55,7 +55,7 @@
                         <p>{{ $kriter->nama_kriteria }}</p>
                     </td>
                     <td class="min-width">
-                    <p>{{ $kriter->bobot }}</p>
+                    <p>{{ $kriter->bobot }}%</p>
                     </td>
                     <td class="min-width">
                     <p>{{ $kriter->jenis }}</p>
