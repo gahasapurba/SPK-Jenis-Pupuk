@@ -1,5 +1,5 @@
-<aside class="sidebar-nav-wrapper @auth @else active @endauth">
-    @auth
+<aside class="sidebar-nav-wrapper @if(Auth::check() && Auth::user()->hasVerifiedEmail()) @else active @endif">
+    @if(Auth::check() && Auth::user()->hasVerifiedEmail())
     <div class="navbar-logo">
         <a href="{{ route('dashboard.index') }}">
             <img src="{{ asset('assets/dashboard/images/logo/logo.svg') }}" alt="logo" />
@@ -18,6 +18,6 @@
             </li>
         </ul>
     </nav>
-    @endauth
+    @endif
 </aside>
 <div class="overlay"></div>
