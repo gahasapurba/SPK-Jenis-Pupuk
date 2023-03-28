@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-6">
                 <div class="header-left d-flex align-items-center">
-                    @auth
+                    @if(Auth::check() && Auth::user()->hasVerifiedEmail())
                     <div class="menu-toggle-btn mr-20">
                         <button id="menu-toggle" class="main-btn primary-btn btn-hover">
                             <i class="lni lni-chevron-left me-2"></i> Menu
@@ -12,10 +12,10 @@
                     <div class="header-search d-none d-md-flex">
                         <div id="google_translate_element"></div>
                     </div>
-                    @endauth
+                    @endif
                 </div>
             </div>
-            @auth
+            @if(Auth::check() && Auth::user()->hasVerifiedEmail())
             <div class="col-lg-7 col-md-7 col-6">
                 <div class="header-right">
                     <div class="profile-box ml-15">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            @endauth
+            @endif
         </div>
     </div>
 </header>
