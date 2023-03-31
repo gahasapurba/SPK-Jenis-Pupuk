@@ -27,4 +27,9 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+
+    protected function sendResetResponse(Request $request, $response)
+    {
+        return redirect($this->redirectPath())->with('success', 'Kata Sandi Berhasil Diubah!');
+    }
 }

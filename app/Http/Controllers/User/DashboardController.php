@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -13,10 +12,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user_count = User::count();
-        return view('pages.dashboard.dashboard',[
-            'user_count' => $user_count,
-        ]);
+        return view('pages.dashboard.dashboard');
     }
 
     /**

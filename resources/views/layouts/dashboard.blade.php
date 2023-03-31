@@ -58,8 +58,6 @@
         </main>
         {{-- Theme --}}
         @include('includes.dashboard.theme')
-        {{-- Modal --}}
-        @yield('modal')
         {{-- Script --}}
         @stack('prepend-script')
         @include('includes.dashboard.script')

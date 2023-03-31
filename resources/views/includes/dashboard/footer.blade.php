@@ -8,8 +8,6 @@
             </div>
             <div class="col-md-6">
                 <div class="terms d-flex justify-content-center justify-content-md-end">
-                    <a href="https://bit.ly/3K3TEcO" target="_blank" class="text-sm">Syarat & Ketentuan</a>
-                    <a href="https://bit.ly/3K2ZA6b" target="_blank" class="text-sm ml-15">Kebijakan Privasi</a>
                 </div>
             </div>
         </div>

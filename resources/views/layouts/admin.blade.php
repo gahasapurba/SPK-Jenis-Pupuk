@@ -58,13 +58,11 @@
         </main>
         {{-- Theme --}}
         @include('includes.admin.theme')
-        {{-- modal --}}
-        @yield('modal')
         {{-- Script --}}
         @stack('prepend-script')
         @include('includes.admin.script')
         @stack('addon-script')
         {{-- Sweet Alert --}}
-        {{-- @include('sweetalert::alert') --}}
+        @include('sweetalert::alert')
     </body>
 </html>
