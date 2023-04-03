@@ -17,7 +17,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $hash = new Hashids('', 10);
+        $item = Auth::user();
+
+        return view('pages.dashboard.user.index', [
+            'hash' => $hash,
+            'item' => $item,
+        ]);
     }
 
     /**
@@ -47,15 +53,9 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(string $id)
     {
-        $hash = new Hashids('', 10);
-        $item = Auth::user();
-
-        return view('pages.dashboard.user.edit', [
-            'hash' => $hash,
-            'item' => $item,
-        ]);
+        //
     }
 
     /**

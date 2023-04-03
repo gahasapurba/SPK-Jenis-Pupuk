@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Hashids\Hashids;
 use App\Models\Criteria;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\StoreCriteriaRequest;
-use App\Http\Requests\UpdateCriteriaRequest;
+use App\Http\Requests\Admin\StoreCriteriaRequest;
+use App\Http\Requests\Admin\UpdateCriteriaRequest;
 
 class CriteriaController extends Controller
 {
@@ -92,7 +92,7 @@ class CriteriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Criteria $criteria)
+    public function show($criteria)
     {
         $hash = new Hashids('', 10);
         $item = Criteria::findOrFail($hash->decodeHex($criteria));
@@ -105,7 +105,7 @@ class CriteriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Criteria $criteria)
+    public function edit($criteria)
     {
         $hash = new Hashids('', 10);
         $item = Criteria::findOrFail($hash->decodeHex($criteria));
@@ -119,7 +119,7 @@ class CriteriaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCriteriaRequest $request, Criteria $criteria)
+    public function update(UpdateCriteriaRequest $request, $criteria)
     {
         $hash = new Hashids('', 10);
         $item = Criteria::findOrFail($hash->decodeHex($criteria));
@@ -139,7 +139,7 @@ class CriteriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Criteria $criteria)
+    public function destroy($criteria)
     {
         $hash = new Hashids('', 10);
         $item = Criteria::findOrFail($hash->decodeHex($criteria));

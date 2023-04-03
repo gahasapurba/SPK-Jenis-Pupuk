@@ -11,7 +11,7 @@ class UpdateCriteriaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class UpdateCriteriaRequest extends FormRequest
         return [
             'code' => 'required|string|min:2|max:4',
             'name' => 'required|string|min:4|max:20',
-            'weight' => 'required|integer',
+            'weight' => 'required|numeric',
             'type' => 'required',
         ];
     }

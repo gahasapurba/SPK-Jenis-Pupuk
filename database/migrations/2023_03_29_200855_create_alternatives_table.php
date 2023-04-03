@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('kalium');
             $table->unsignedBigInteger('price');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

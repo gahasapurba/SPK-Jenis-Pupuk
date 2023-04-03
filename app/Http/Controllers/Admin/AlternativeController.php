@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alternative;
-use App\Http\Requests\StoreAlternativeRequest;
-use App\Http\Requests\UpdateAlternativeRequest;
+use App\Http\Requests\Admin\StoreAlternativeRequest;
+use App\Http\Requests\Admin\UpdateAlternativeRequest;
 use Hashids\Hashids;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -89,7 +89,7 @@ class AlternativeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Alternative $alternative)
+    public function show($alternative)
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($alternative));
@@ -102,7 +102,7 @@ class AlternativeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Alternative $alternative)
+    public function edit($alternative)
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($alternative));
@@ -116,7 +116,7 @@ class AlternativeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAlternativeRequest $request, Alternative $alternative)
+    public function update(UpdateAlternativeRequest $request, $alternative)
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($alternative));
@@ -133,7 +133,7 @@ class AlternativeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Alternative $alternative)
+    public function destroy($alternative)
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($alternative));

@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Hashids\Hashids;
 use App\Models\Subcriteria;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\StoreSubcriteriaRequest;
-use App\Http\Requests\UpdateSubcriteriaRequest;
+use App\Http\Requests\Admin\StoreSubcriteriaRequest;
+use App\Http\Requests\Admin\UpdateSubcriteriaRequest;
 use App\Models\Criteria;
 
 class SubcriteriaController extends Controller
@@ -101,7 +101,7 @@ class SubcriteriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Subcriteria $subcriteria)
+    public function show($subcriteria)
     {
         $hash = new Hashids('', 10);
         $item = Subcriteria::findOrFail($hash->decodeHex($subcriteria));
@@ -114,7 +114,7 @@ class SubcriteriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Subcriteria $subcriteria)
+    public function edit($subcriteria)
     {
         $hash = new Hashids('', 10);
         $item = Subcriteria::findOrFail($hash->decodeHex($subcriteria));
@@ -130,7 +130,7 @@ class SubcriteriaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubcriteriaRequest $request, Subcriteria $subcriteria)
+    public function update(UpdateSubcriteriaRequest $request, $subcriteria)
     {
         $hash = new Hashids('', 10);
         $item = Subcriteria::findOrFail($hash->decodeHex($subcriteria));
@@ -149,7 +149,7 @@ class SubcriteriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subcriteria $subcriteria)
+    public function destroy($subcriteria)
     {
         $hash = new Hashids('', 10);
         $item = Subcriteria::findOrFail($hash->decodeHex($subcriteria));

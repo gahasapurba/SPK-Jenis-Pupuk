@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('name');
-            $table->unsignedInteger('weight');
+            $table->unsignedDecimal('weight');
             $table->string('type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

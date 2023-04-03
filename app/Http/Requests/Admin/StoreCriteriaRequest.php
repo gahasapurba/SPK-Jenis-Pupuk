@@ -11,7 +11,7 @@ class StoreCriteriaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class StoreCriteriaRequest extends FormRequest
         return [
             'code' => 'required|string|min:2|max:4|unique:criterias',
             'name' => 'required|string|min:4|max:20',
-            'weight' => 'required|integer',
+            'weight' => 'required|numeric',
             'type' => 'required',
         ];
     }

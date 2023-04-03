@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Hashids\Hashids;
 use App\Models\Alternative;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\StoreAlternativeRequest;
-use App\Http\Requests\UpdateAlternativeRequest;
+use App\Http\Requests\Admin\StoreAlternativeRequest;
+use App\Http\Requests\Admin\UpdateAlternativeRequest;
 
 class AssessmentController extends Controller
 {
@@ -94,7 +94,7 @@ class AssessmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Alternative $assessment)
+    public function show($assessment)
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($assessment));

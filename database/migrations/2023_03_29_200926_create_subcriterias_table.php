@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('variable');
             $table->unsignedInteger('value');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
