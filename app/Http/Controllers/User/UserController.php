@@ -61,10 +61,10 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, string $id)
+    public function update(UserRequest $request, $id)
     {
         $hash = new Hashids('', 10);
-        $item = User::all()->where('id', Auth::user()->id)->findOrFail($hash->decodeHex($id));
+        $item = User::findOrFail($hash->decodeHex($id));
 
         if ($request->hasFile('avatar')) {
             $data = [

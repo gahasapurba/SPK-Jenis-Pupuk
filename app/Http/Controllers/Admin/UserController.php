@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Hashids\Hashids;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -27,23 +29,12 @@ class UserController extends Controller
             $hash = new Hashids('', 10);
 
             return DataTables::of($queryUser)
-                ->addColumn('profile', function (User $user) {
-                    return '
-                        '.$user->name.' - '.$user->email.'
-                    ';
-                })
                 ->addColumn('status', function (User $user) {
                     if ($user->email_verified_at) {
-                        return '<span class="status-btn success-btn">Email Terverifikasi</span>';
+                        return '<span class="status-btn success-btn">Pengguna Terverifikasi</span>';
                     } else {
-                        return '<span class="status-btn warning-btn">Email Belum Terverifikasi</span>';
+                        return '<span class="status-btn warning-btn">Pengguna Belum Terverifikasi</span>';
                     }
-                })
-                ->addColumn('created_at', function (User $user) {
-                    return $user->created_at->diffForHumans();
-                })
-                ->addColumn('updated_at', function (User $user) {
-                    return $user->updated_at->diffForHumans();
                 })
                 ->addColumn('show', function($item) use($hash) {
                     return '
@@ -68,7 +59,7 @@ class UserController extends Controller
                     ';
                 })
                 ->addIndexColumn()
-                ->rawColumns(['profile', 'status', 'show', 'delete'])
+                ->rawColumns(['status', 'show', 'delete'])
                 ->make();
         }
     }
@@ -143,16 +134,11 @@ class UserController extends Controller
             $hash = new Hashids('', 10);
 
             return DataTables::of($queryUser)
-                ->addColumn('profile', function (User $user) {
-                    return '
-                        '.$user->name.' - '.$user->email.'
-                    ';
-                })
                 ->addColumn('status', function (User $user) {
                     if ($user->email_verified_at) {
-                        return '<span class="status-btn success-btn">Email Terverifikasi</span>';
+                        return '<span class="status-btn success-btn">Pengguna Terverifikasi</span>';
                     } else {
-                        return '<span class="status-btn warning-btn">Email Belum Terverifikasi</span>';
+                        return '<span class="status-btn warning-btn">Pengguna Belum Terverifikasi</span>';
                     }
                 })
                 ->addColumn('created_at', function (User $user) {
@@ -187,7 +173,7 @@ class UserController extends Controller
                     ';
                 })
                 ->addIndexColumn()
-                ->rawColumns(['profile', 'status', 'restore', 'kill'])
+                ->rawColumns(['status', 'restore', 'kill'])
                 ->make();
         }
     }

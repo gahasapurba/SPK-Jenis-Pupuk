@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'email' => 'gahasapurba.tech@gmail.com',
             'email_verified_at' => date('Y-m-d H:i:s', time()),
             'password' => bcrypt('spkjenispupuk123456'),
+            'avatar' => 'https://lh3.googleusercontent.com/a/AGNmyxZ3ksQa-dowr0kQITa6xyNhZoQtk-CCUiWBEONbwA',
             'is_admin' => true,
         ]);
 
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
             'email' => 'gahasapurba.social@gmail.com',
             'email_verified_at' => date('Y-m-d H:i:s', time()),
             'password' => bcrypt('gahasa123456'),
+            'avatar' => 'https://lh3.googleusercontent.com/a/AGNmyxZ9HwLaoy0BWTrjGLEVvfB2Y6z6DPRB4iVu7bs-',
         ]);
     }
 }

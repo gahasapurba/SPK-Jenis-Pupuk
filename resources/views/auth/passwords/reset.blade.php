@@ -73,7 +73,11 @@
                     </div>
                 </form>
                 <div class="singup-option pt-40">
+                @if(Auth::check() && Auth::user()->hasVerifiedEmail())
+                    <p class="text-sm text-medium text-dark text-center"><a href="{{ route('dashboard.user.index') }}">Batal</a></p>
+                @else
                     <p class="text-sm text-medium text-dark text-center">Sudah mengingat kembali kata sandi anda? <a href="{{ route('login') }}">Silahkan masuk</a></p>
+                @endif
                 </div>
             </div>
         </div>

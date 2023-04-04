@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Criteria;
+use App\Models\Alternative;
+use App\Models\Subcriteria;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -13,10 +16,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $user_count = User::count();
+        $user_count = User::where('is_admin', false)->count();
+        $criteria_count = Criteria::count();
+        $subcriteria_count = Subcriteria::count();
+        $alternative_count = Alternative::count();
 
         return view('pages.admin.admin',[
             'user_count' => $user_count,
+            'criteria_count' => $criteria_count,
+            'subcriteria_count' => $subcriteria_count,
+            'alternative_count' => $alternative_count,
         ]);
     }
 
