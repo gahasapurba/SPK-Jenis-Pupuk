@@ -28,6 +28,9 @@ class SubcriteriaController extends Controller
             $hash = new Hashids('', 10);
 
             return DataTables::of($querySubcriteria)
+                ->addColumn('criteria_criterias_id', function (Subcriteria $subcriteria) {
+                    return $subcriteria->criteria->name;
+                })
                 ->addColumn('show', function($item) use($hash) {
                     return '
                         <div class="action">
@@ -136,6 +139,7 @@ class SubcriteriaController extends Controller
         $item = Subcriteria::findOrFail($hash->decodeHex($subcriteria));
 
         $data = [
+            'criteria_criterias_id' => $hash->decodeHex($request->criteria_criterias_id),
             'name' => $request->name,
             'variable' => $request->variable,
             'value' => $request->value,
@@ -171,6 +175,9 @@ class SubcriteriaController extends Controller
             $hash = new Hashids('', 10);
 
             return DataTables::of($querySubcriteria)
+                ->addColumn('criteria_criterias_id', function (Subcriteria $subcriteria) {
+                    return $subcriteria->criteria->name;
+                })
                 ->addColumn('deleted_at', function (Subcriteria $subcriteria) {
                     return $subcriteria->deleted_at->isoFormat('dddd, D MMMM Y, HH:mm:ss');
                 })

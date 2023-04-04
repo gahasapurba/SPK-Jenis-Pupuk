@@ -62,4 +62,3 @@ class CriteriaSeeder extends Seeder
         ]);
     }
 }
-// Criteria::factory()->count(100)->create();

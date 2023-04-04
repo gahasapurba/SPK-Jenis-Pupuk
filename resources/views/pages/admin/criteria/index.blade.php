@@ -55,7 +55,7 @@
 @push('addon-script')
 <script>
     var datatable = $('#listCriteria').DataTable({
-        lengthMenu: [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]],
+        lengthMenu: [[6, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100, "All"]],
         processing: true,
         serverSide: true,
         ordering: true,

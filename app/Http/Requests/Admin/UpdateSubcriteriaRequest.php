@@ -22,6 +22,7 @@ class UpdateSubcriteriaRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'criteria_criterias_id' => 'required',
             'name' => 'required|string|min:4|max:25',
             'variable' => 'required|string',
             'value' => 'required|integer',
