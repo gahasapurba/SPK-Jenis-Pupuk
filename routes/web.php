@@ -53,6 +53,9 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
     Route::get('/pagesAddPenilaian/{id}', [Admin\PenilaianController::class, 'pagesAddPenilaian'])->name('pagesAddPenilaian');
     Route::post('/editPenilaian', [Admin\PenilaianController::class, 'addPenilaian'])->name('editPenilaian');
     Route::get('/pagesEditPenilaian/{id}', [Admin\PenilaianController::class, 'pagesEditPenilaian'])->name('pagesEditPenilaian');
+
+    // data perhitungan
+    Route::get('/perhitungan', [Admin\PerhitunganController::class, 'prosesAmbildataSubkriteria'])->name('perhitungan');
 });
 
 // Route Yang Hanya Bisa Diakses Oleh Pengguna Yang Rolenya User

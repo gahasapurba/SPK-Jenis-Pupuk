@@ -51,4 +51,10 @@ class Subkriteria extends Model
 
         return DB::table('subkriteria')->where('kriteria_id', $kode)->get();
     }
+
+    // Mengambil tiap data alternatif
+    public function getDataOnlySubkriteriaKandunganK($id)
+    {
+        return DB::table('subkriteria')->where('kriteria_id', $id)->orderBy('nilai', 'ASC')->get();
+    }
 }

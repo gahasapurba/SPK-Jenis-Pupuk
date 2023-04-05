@@ -41,4 +41,12 @@ class Alternatif extends Model
     {
         return DB::table('alternatif')->where('id', $id)->get();
     }
+
+    // ambil data alternatif setiap kriteria
+    // --------------------------------
+    // ambil data alternatif curah hujan
+    public function dataAlternatif($alternatif)
+    {
+        return DB::table('alternatif')->select($alternatif)->orderBy('created_at', 'DESC')->get();
+    }
 }
