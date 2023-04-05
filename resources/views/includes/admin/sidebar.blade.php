@@ -120,15 +120,7 @@
                     </li>
                 </ul>
             </li>
-            {{-- Data Perhitungan --}}
-            <li class="nav-item {{ (request()->is('dashboard')) ? 'active' : '' }}">
-                <a href="{{ route('perhitungan') }}">
-                    <span class="icon">
-                        <i class="lni lni-layout"></i>
-                    </span>
-                    <span class="text">Data Perhitungan</span>
-                </a>
-            </li>
+
         </ul>
     </nav>
 </aside>
