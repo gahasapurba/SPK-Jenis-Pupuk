@@ -117,10 +117,10 @@ class CalculationController extends Controller
 
         // menggabungkan array a, b, dan c menjadi matriks 2 dimensi
         array_push($matrix, $arrayCurahHujan);
-        array_push($matrix, $arrayKandunganN);
-        array_push($matrix, $arrayKandunganK);
-        array_push($matrix, $arrayKandunganP);
         array_push($matrix, $arrayJenisTanah);
+        array_push($matrix, $arrayKandunganN);
+        array_push($matrix, $arrayKandunganP);
+        array_push($matrix, $arrayKandunganK);
         array_push($matrix, $arrayHarga);
 
         $totalTiapColom = array();
