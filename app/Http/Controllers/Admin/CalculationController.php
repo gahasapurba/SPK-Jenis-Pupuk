@@ -143,6 +143,6 @@ class CalculationController extends Controller
             "totalTiapColom" => $totalTiapColom,
         ];
 
-        return view('pages.admin.dataPerhitungan.index', $data);
+        return view('pages.admin.calculation.index', $data);
     }
 }
