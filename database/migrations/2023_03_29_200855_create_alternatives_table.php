@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('alternatives', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('rainfall');
-            $table->string('soil_type');
-            $table->unsignedInteger('nitrogen');
-            $table->unsignedInteger('phosphor');
-            $table->unsignedInteger('kalium');
-            $table->unsignedBigInteger('price');
+            $table->string('rainfall')->nullable();
+            $table->string('soil_type')->nullable();
+            $table->unsignedInteger('nitrogen')->nullable();
+            $table->unsignedInteger('phosphor')->nullable();
+            $table->unsignedInteger('kalium')->nullable();
+            $table->unsignedBigInteger('price')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

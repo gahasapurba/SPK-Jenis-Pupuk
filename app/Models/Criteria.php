@@ -17,4 +17,13 @@ class Criteria extends Model
         'weight',
         'type',
     ];
+
+    protected $cascadeDeletes = [
+        'subcriteria',
+    ];
+
+    public function subcriteria()
+    {
+        return $this->hasMany(Subcriteria::class, 'criteria_criterias_id');
+    }
 }

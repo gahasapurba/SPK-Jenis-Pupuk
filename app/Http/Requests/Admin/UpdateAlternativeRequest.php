@@ -23,12 +23,6 @@ class UpdateAlternativeRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:4',
-            'rainfall' => 'required|string',
-            'soil_type' => 'required|string',
-            'nitrogen' => 'required|integer',
-            'phospor' => 'required|integer',
-            'kalium' => 'required|integer',
-            'price' => 'required|integer',
         ];
     }
 }

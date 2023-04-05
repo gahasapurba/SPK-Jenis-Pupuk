@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Hashids\Hashids;
 use App\Models\Alternative;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\Admin\StoreAlternativeRequest;
+use App\Http\Requests\Admin\StoreAssessmentRequest;
 use App\Http\Requests\Admin\UpdateAlternativeRequest;
 
 class AssessmentController extends Controller
@@ -75,9 +75,10 @@ class AssessmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAlternativeRequest $request)
+    public function store(StoreAssessmentRequest $request)
     {
         $data = [
+            'name' => $request->name,
             'rainfall' => $request->rainfall,
             'soil_type' => $request->soil_type,
             'nitrogen' => $request->nitrogen,
