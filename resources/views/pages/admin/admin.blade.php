@@ -3,6 +3,14 @@
     Dashboard
 @endsection
 @section('content')
+<div class="row justify-content-center mb-30">
+    <div class="col-lg-8">
+        <div class="section-title text-center">
+            <h2 class="mb-20">Selamat Datang di Website Sistem Pendukung Keputusan Jenis Pupuk</h2>
+            <p class="text-sm">Solusi yang tepat untuk menentukan jenis pupuk yang paling tepat untuk tanaman padi anda</p>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-xl-3 col-lg-4 col-sm-6">
         <div class="icon-card icon-card-2 mb-30">

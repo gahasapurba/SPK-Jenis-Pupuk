@@ -22,11 +22,11 @@ class StoreAssessmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|min:4',
+            'name' => 'required|string',
             'rainfall' => 'required|string',
             'soil_type' => 'required|string',
             'nitrogen' => 'required|integer',
-            'phospor' => 'required|integer',
+            'phosphor' => 'required|integer',
             'kalium' => 'required|integer',
             'price' => 'required|integer',
         ];

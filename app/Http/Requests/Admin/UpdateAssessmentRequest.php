@@ -26,7 +26,7 @@ class UpdateAssessmentRequest extends FormRequest
             'rainfall' => 'required|string',
             'soil_type' => 'required|string',
             'nitrogen' => 'required|integer',
-            'phospor' => 'required|integer',
+            'phosphor' => 'required|integer',
             'kalium' => 'required|integer',
             'price' => 'required|integer',
         ];

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('alternatives', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('rainfall')->nullable();
+            $table->unsignedInteger('rainfall')->nullable();
             $table->string('soil_type')->nullable();
             $table->unsignedInteger('nitrogen')->nullable();
             $table->unsignedInteger('phosphor')->nullable();
