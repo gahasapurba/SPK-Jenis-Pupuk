@@ -52,8 +52,12 @@
                     </div>
                 </form>
                 <div class="d-flex justify-content-between flex-wrap pt-40">
+                @if(Auth::check() && Auth::user()->hasVerifiedEmail())
+                    <a href="{{ route('dashboard.user.index') }}" class="hover-underline">Batal</a>
+                @else
                     <a href="{{ route('login') }}" class="hover-underline">Masuk</a>
                     <p>Masih belum memiliki akun? <a href="{{ route('register') }}" class="hover-underline">Buat akun</a></p>
+                @endif
                 </div>
             </div>
         </div>

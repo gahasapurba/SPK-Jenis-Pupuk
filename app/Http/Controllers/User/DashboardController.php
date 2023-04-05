@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\User;
+use App\Models\Criteria;
+use App\Models\Subcriteria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Alternative;
 
 class DashboardController extends Controller
 {
@@ -13,9 +16,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $user_count = User::count();
+        $user_count = User::where('is_admin', false)->count();
+        $criteria_count = Criteria::count();
+        $subcriteria_count = Subcriteria::count();
+        $alternative_count = Alternative::count();
+
         return view('pages.dashboard.dashboard',[
             'user_count' => $user_count,
+            'criteria_count' => $criteria_count,
+            'subcriteria_count' => $subcriteria_count,
+            'alternative_count' => $alternative_count,
         ]);
     }
 

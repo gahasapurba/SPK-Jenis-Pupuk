@@ -32,7 +32,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb">
-                                                <a href="/">Dashboard&nbsp;</a>
+                                                <a href="{{ route('dashboard.index') }}">Dashboard&nbsp;</a>
                                             </li>
                                             <li class="breadcrumb active" aria-current="page">
                                                 / @yield('title')
@@ -58,8 +58,6 @@
         </main>
         {{-- Theme --}}
         @include('includes.dashboard.theme')
-        {{-- Modal --}}
-        @yield('modal')
         {{-- Script --}}
         @stack('prepend-script')
         @include('includes.dashboard.script')

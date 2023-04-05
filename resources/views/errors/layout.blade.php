@@ -34,7 +34,6 @@
                             <p>© {{ date('Y') }} {{ config('app.name') }}. @lang('Hak cipta dilindungi undang-undang.')</p>
                             <div class="button">
                                 <a href="/" class="btn">Beranda</a>
-                                <a href="#" class="btn alt">Hubungi Kami</a>
                             </div>
                         </div>
                     </div>

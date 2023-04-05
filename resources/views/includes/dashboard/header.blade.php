@@ -24,7 +24,7 @@
                                 <div class="info">
                                     <h6>{{ Auth::user()->name }}</h6>
                                     <div class="image">
-                                        @if (Str::startsWith(Auth::user()->avatar, 'upload/avatar/'))
+                                        @if (Str::startsWith(Auth::user()->avatar, 'upload/user_avatar/'))
                                             <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="Profile Photo" />
                                         @elseif (!Auth::user()->avatar)
                                             <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="Profile Photo" />
@@ -37,11 +37,11 @@
                             <i class="lni lni-chevron-down"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
-                            {{-- <li>
+                            <li>
                                 <a href="{{ route('dashboard.user.index') }}">
                                     <i class="lni lni-user"></i> Ubah Profil
                                 </a>
-                            </li> --}}
+                            </li>
                             <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="lni lni-exit"></i> Keluar

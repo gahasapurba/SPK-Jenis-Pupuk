@@ -14,7 +14,7 @@
     <body>
         {{-- Sidebar --}}
         @include('includes.dashboard.sidebar')
-        <main class="main-wrapper active">
+        <main class="main-wrapper @if(Auth::check() && Auth::user()->hasVerifiedEmail()) @else active @endif">
             {{-- Header --}}
             @include('includes.dashboard.header')
             {{-- Pages --}}
