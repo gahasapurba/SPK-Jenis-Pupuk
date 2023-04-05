@@ -4,21 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Alternatif;
-use App\Models\Subkriteria;
-use App\Models\Kriteria;
 
 class CalculationController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->Alternatif = new Alternatif();
-        $this->Kriteria = new Kriteria();
-        $this->Subkriteria = new Subkriteria();
     }
 
-    function prosesAmbildataSubkriteria(){
+    function index(){
         $arrayCurahHujan = array();
         $arrayKandunganN = array();
         $arrayKandunganK = array();

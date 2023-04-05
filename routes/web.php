@@ -85,6 +85,9 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
         Route::get('assessment/{assessment}/restore', [Admin\AssessmentController::class, 'restore'])->name('assessment.restore');
         Route::delete('assessment/{assessment}/kill', [Admin\AssessmentController::class, 'kill'])->name('assessment.kill');
 
+        // Perhitungan
+        Route::resource('calculation', Admin\CalculationController::class);
+
         // Pengguna
         Route::get('user/trash', [Admin\UserController::class, 'trash'])->name('user.trash');
         Route::resource('user', Admin\UserController::class);
