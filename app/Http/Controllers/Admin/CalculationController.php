@@ -8,7 +8,7 @@ use App\Models\Alternatif;
 use App\Models\Subkriteria;
 use App\Models\Kriteria;
 
-class PerhitunganController extends Controller
+class CalculationController extends Controller
 {
     public function __construct()
     {
