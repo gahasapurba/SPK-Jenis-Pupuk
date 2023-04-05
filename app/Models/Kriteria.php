@@ -35,4 +35,9 @@ class Kriteria extends Model
         $kriteria = Kriteria::find($id);
         $kriteria->delete();
     }
+
+    public function getDataPerkriteria($id)
+    {
+        return DB::table('kriteria')->where('id', $id)->get();
+    }
 }
