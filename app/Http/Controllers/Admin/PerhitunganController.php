@@ -137,10 +137,33 @@ class PerhitunganController extends Controller
         }
 
         $transpose = array_map(null, ...$matrix);
+
+        // normalisasi matriks
+        $normalisasiMatriks = array();
+        for($i = 0; $i < count($alternatif); $i++) {
+            for($j = 0; $j < 6; $j++){
+                $hasil = $transpose[$i][$j]/$totalTiapColom[$j];
+                $normalisasiMatriks[$i][$j] = number_format($hasil, 3, '.', '');
+            }
+        }
+
+        // normalisasi matriks terbobot
+        $kriteria = $this->Kriteria->getData();
+        $normalisasiMatriksTerbobot = array();
+        for($i = 0; $i < count($alternatif); $i++) {
+            for($j = 0; $j < 6; $j++){
+                $hasil = $normalisasiMatriks[$i][$j]*($kriteria[$j]->bobot/100);
+                $normalisasiMatriksTerbobot[$i][$j] = number_format($hasil, 3, '.', '');
+            }
+        }
+
         $data = [
             "matrix" => $transpose,
             "alternatif" => $alternatif,
             "totalTiapColom" => $totalTiapColom,
+            "normalisasiMatriks" => $normalisasiMatriks,
+            "normalisasiMatriksTerbobot" => $normalisasiMatriksTerbobot,
+            "kriteria" => $kriteria,
         ];
 
         return view('pages.admin.dataPerhitungan.index', $data);
