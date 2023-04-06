@@ -87,6 +87,7 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
 
         // Perhitungan
         Route::resource('calculation', Admin\CalculationController::class);
+        Route::post('calculation/ui', [Admin\CalculationController::class, 'index'])->name('calculation.ui');
 
         // Pengguna
         Route::get('user/trash', [Admin\UserController::class, 'trash'])->name('user.trash');

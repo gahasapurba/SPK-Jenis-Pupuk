@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Ui_value;
 use Illuminate\Support\Facades\DB;
 
 class CalculationController extends Controller
@@ -139,7 +140,8 @@ class CalculationController extends Controller
         for($i = 0; $i < count($alternatif); $i++) {
             for($j = 0; $j < 6; $j++){
                 $hasil = $transpose[$i][$j]/$totalTiapColom[$j];
-                $normalisasiMatriks[$i][$j] = number_format($hasil, 3, '.', '');
+                // $normalisasiMatriks[$i][$j] = number_format($hasil, 3, '.', '');
+                $normalisasiMatriks[$i][$j] = $hasil;
             }
         }
 
@@ -148,10 +150,88 @@ class CalculationController extends Controller
         for($i = 0; $i < count($alternatif); $i++) {
             for($j = 0; $j < 6; $j++){
                 $hasil = $normalisasiMatriks[$i][$j]*($criterias[$j]->weight);
-                $normalisasiMatriksTerbobot[$i][$j] = number_format($hasil, 3, '.', '');
+                // $normalisasiMatriksTerbobot[$i][$j] = number_format($hasil, 3, '.', '');
+                $normalisasiMatriksTerbobot[$i][$j] = $hasil;
             }
         }
 
+        // Hitung Nilai Memaksimalkan S+
+        $totolSPlus = array();
+        for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
+            $sum = 0;
+            for ($j = 0; $j < 5; $j++) {
+                $sum += $normalisasiMatriksTerbobot[$i][$j];
+            }
+            // $totolSPlus [] = number_format($sum, 3, '.', '');
+            $totolSPlus [] = $sum;
+        }
+
+        // Hitung Nilai Minimal S-
+        $totolSNegartif = array();
+        for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
+            $sum = 0;
+            for ($j = 5; $j < 6; $j++) {
+                $sum += $normalisasiMatriksTerbobot[$i][$j];
+            }
+            // $totolSNegartif [] = number_format($sum, 3, '.', '');
+            $totolSNegartif [] = $sum;
+        }
+
+        // hitung bobot relatif
+        // tahap 1 1/S-i
+        $tahap1 = array();
+        $jumlah1SMin = 0;
+        for($i = 0; $i < count($totolSNegartif); $i++){
+            $tahap1[$i] = 1/$totolSNegartif[$i];
+            $jumlah1SMin += (1/$totolSNegartif[$i]);
+        }
+
+        // tahap dua
+        $tahap2 = array();
+        $jumlahSMin = 0;
+        for($i = 0; $i < count($totolSNegartif); $i++){
+            $tahap2[$i] = $jumlah1SMin*$normalisasiMatriksTerbobot[$i][5];
+            $jumlahSMin += $normalisasiMatriksTerbobot[$i][5];
+        }
+
+        // tahap 3
+        $tahap3 = array();
+        for($i = 0; $i < count($tahap2); $i++){
+            $tahap3[$i] = $jumlahSMin/$tahap2[$i];
+        }
+
+        // tahap 4
+        $tahap4 = array();
+        for($i = 0; $i < count($tahap3); $i++){
+            $tahap4[$i] = $totolSPlus[$i]+$tahap3[$i];
+        }
+
+        $Qmax = max($tahap4);
+
+         // HITUNG UTILITAS KUANTITATIF
+        $ui = array();
+        for($i = 0; $i < count($tahap4); $i++){
+            $ui[$i] = ($tahap4[$i]*$Qmax);
+        }
+
+        DB::table('ui_value')->truncate();
+        for($i = 0; $i < count($tahap4); $i++){
+            $data = [
+                'id_alternatives' => $alternatif[$i]->id,
+                'spk_results' => $ui[$i],
+            ];
+
+            Ui_value::create($data);
+        }
+
+        $utilital_kuanti = DB::table('alternatives')
+            ->join('ui_value', 'ui_value.id_alternatives', '=', 'alternatives.id')
+            ->select(
+                'alternatives.name as name',
+                'ui_value.spk_results as spk_results',
+            )
+            ->orderBy('ui_value.spk_results', 'DESC')
+            ->get();
 
         $data = [
             "matrix" => $transpose,
@@ -159,6 +239,19 @@ class CalculationController extends Controller
             "criterias" => $criterias,
             "totalTiapColom" => $totalTiapColom,
             "normalisasiMatriks" => $normalisasiMatriks,
+            "normalisasiMatriksTerbobot" => $normalisasiMatriksTerbobot,
+            "totolSPlus" => $totolSPlus,
+            "totolSNegartif" => $totolSNegartif,
+
+            // hitung bobot relatif
+            "tahap1" => $tahap1,
+            "jumlah1SMin" => $jumlah1SMin,
+            "tahap2" => $tahap2,
+            "tahap3" => $tahap3,
+            "tahap4" => $tahap4,
+            "Qmax" => $Qmax,
+            "ui" => $ui,
+            "utilital_kuanti" => $utilital_kuanti,
         ];
 
         return view('pages.admin.calculation.index', $data);
