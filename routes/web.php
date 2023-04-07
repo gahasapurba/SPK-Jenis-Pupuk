@@ -90,7 +90,6 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
 
         // Perhitungan
         Route::resource('calculation', Admin\CalculationController::class);
-        Route::post('calculation/ui', [Admin\CalculationController::class, 'index'])->name('calculation.ui');
 
         // Utilitas Kuantitatif
         Route::resource('quantitative_utility', Admin\QuantitativeUtilityController::class);
