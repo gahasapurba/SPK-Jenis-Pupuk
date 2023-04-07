@@ -11,12 +11,12 @@
             </div>
             <div class="client-profile-photo">
                 <div class="image">
-                    @if (Str::startsWith(Auth::user()->avatar, 'upload/avatar/'))
-                        <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="Profile Photo" />
-                    @elseif (!Auth::user()->avatar)
-                        <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="Profile Photo" />
+                    @if (Str::startsWith($item->avatar, 'upload/avatar/'))
+                        <img src="{{ Storage::url($item->avatar) }}" alt="Profile Photo" />
+                    @elseif (!$item->avatar)
+                        <img src="https://ui-avatars.com/api/?name={{ $item->name }}" alt="Profile Photo" />
                     @else
-                        <img src="{{ Auth::user()->avatar }}" alt="Profile Photo" />
+                        <img src="{{ $item->avatar }}" alt="Profile Photo" />
                     @endif
                 </div>
                 <div class="profile-meta text-center pt-25">

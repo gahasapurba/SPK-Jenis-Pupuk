@@ -18,6 +18,24 @@
                     <span class="text">Dashboard</span>
                 </a>
             </li>
+            {{-- Divider --}}
+            <span class="divider"><hr /></span>
+            {{-- Data Hasil Utilitas Kuantitatif --}}
+            <li class="nav-item nav-item-has-children">
+                <a href="#0" class="{{ (request()->is('dashboard/quantitative_utility*')) ? '' : 'collapsed' }}" data-bs-toggle="collapse" data-bs-target="#ddmenu_1" aria-controls="ddmenu_1" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon">
+                        <i class="lni lni-database"></i>
+                    </span>
+                    <span class="text">Data Hasil Utilitas Kuantitatif</span>
+                </a>
+                <ul id="ddmenu_1" class="collapse {{ (request()->is('dashboard/quantitative_utility*')) ? 'show' : '' }} dropdown-nav">
+                    <li>
+                        <a href="{{ route('dashboard.quantitative_utility.index') }}" class="{{ (request()->is('dashboard/quantitative_utility')) ? 'active' : '' }}">Daftar Data Hasil Utilitas Kuantitatif</a>
+                    </li>
+                </ul>
+            </li>
+            {{-- Divider --}}
+            <span class="divider"><hr /></span>
             {{-- Ubah Profil --}}
             <li class="nav-item {{ (request()->is('dashboard/user*')) ? 'active' : '' }}">
                 <a href="{{ route('dashboard.user.index') }}">

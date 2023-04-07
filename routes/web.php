@@ -38,6 +38,9 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
         // Penilaian
         Route::get('admin-assessment-list', [Admin\AssessmentController::class, 'listAssessment']);
 
+        // Utilitas Kuantitatif
+        Route::get('admin-quantitative_utility-list', [Admin\QuantitativeUtilityController::class, 'listQuantitativeUtility']);
+
         // Pengguna
         Route::get('admin-user-list', [Admin\UserController::class, 'listUser']);
 
@@ -88,6 +91,9 @@ Route::middleware(['auth','verified','isAdmin'])->group(function () {
         // Perhitungan
         Route::resource('calculation', Admin\CalculationController::class);
 
+        // Utilitas Kuantitatif
+        Route::resource('quantitative_utility', Admin\QuantitativeUtilityController::class);
+
         // Pengguna
         Route::get('user/trash', [Admin\UserController::class, 'trash'])->name('user.trash');
         Route::resource('user', Admin\UserController::class);
@@ -107,8 +113,16 @@ Route::middleware(['auth','verified','isUser'])->group(function () {
 
     Route::get('/', [User\DashboardController::class, 'index']);
 
+    // Route List DataTables
+
+        // Utilitas Kuantitatif
+        Route::get('user-quantitative_utility-list', [User\QuantitativeUtilityController::class, 'listQuantitativeUtility']);
+
     // Route Controller
     Route::prefix('dashboard')->name('dashboard.')->group(function () {
+
+        // Utilitas Kuantitatif
+        Route::resource('quantitative_utility', User\QuantitativeUtilityController::class);
 
         // Profil
         Route::resource('user', User\UserController::class);
