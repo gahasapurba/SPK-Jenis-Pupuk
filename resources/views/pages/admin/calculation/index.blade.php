@@ -348,9 +348,9 @@
               <tbody>
                   @foreach ($utilital_kuanti as $no => $row)
                       <tr>
-                          <td>{{ $row->name }}</td>
-                          <td>{{ number_format($row->spk_results, 7, '.', '') }}</td>
-                          <td>{{ $no+1 }}</td>
+                        <td>{{ $row->name }}</td>
+                        <td>{{ number_format($row->spk_results, 7, '.', '') }}</td>
+                        <td>{{ $no+1 }}</td>
                       </tr>
                   @endforeach
                 <!-- end table row -->
