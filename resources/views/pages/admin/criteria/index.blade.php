@@ -36,12 +36,12 @@
                                 <th class="text-center">
                                     <h5>Detail Kriteria</h5>
                                 </th>
-                                <th class="text-center">
+                                {{-- <th class="text-center">
                                     <h5>Ubah Kriteria</h5>
                                 </th>
                                 <th class="text-center">
                                     <h5>Hapus Kriteria</h5>
-                                </th>
+                                </th> --}}
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -89,20 +89,20 @@
                 searchable: false,
                 class: 'text-center',
             },
-            {
-                data: 'edit',
-                name: 'edit',
-                orderable: false,
-                searchable: false,
-                class: 'text-center',
-            },
-            {
-                data: 'delete',
-                name: 'delete',
-                orderable: false,
-                searchable: false,
-                class: 'text-center',
-            },
+            // {
+            //     data: 'edit',
+            //     name: 'edit',
+            //     orderable: false,
+            //     searchable: false,
+            //     class: 'text-center',
+            // },
+            // {
+            //     data: 'delete',
+            //     name: 'delete',
+            //     orderable: false,
+            //     searchable: false,
+            //     class: 'text-center',
+            // },
         ],
         dom: 'Blfrtip',
         buttons: [
