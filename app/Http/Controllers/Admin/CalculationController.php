@@ -206,9 +206,9 @@ class CalculationController extends Controller
         // Menghitung Utilitas Kuantitatif
         $quantitative_utility = array();
         for($i = 0; $i < count($tahap4); $i++){
-            $quantitative_utility[$i] = $tahap4[$i]*$Qmax;
+            $quantitative_utility[$i] = ($tahap4[$i]/$Qmax)*100;
         }
-
+        // dd($quantitative_utility);
         DB::table('quantitative_utilities')->truncate();
         for($i = 0; $i < count($tahap4); $i++){
             $data = [

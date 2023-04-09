@@ -366,7 +366,7 @@
                     </table>
                 </div>
             </div>
-            {{-- <div class="card-style mb-30">
+            <div class="card-style mb-30">
                 <h6 class="mb-10">Nilai Utilitas Kuantitatif</h6>
                 <div class="table-responsive">
                     <table class="table">
@@ -400,7 +400,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>
