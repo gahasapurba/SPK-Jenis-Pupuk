@@ -216,7 +216,9 @@ class CalculationController extends Controller
                 'result' => $quantitative_utility[$i],
             ];
 
-            QuantitativeUtility::create($data);
+            if($alternatives[$i]->deleted_at == null){
+                QuantitativeUtility::create($data);
+            }
         }
 
         $utilitas_kuantitatif = DB::table('alternatives')
