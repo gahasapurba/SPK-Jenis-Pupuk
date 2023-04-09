@@ -56,46 +56,30 @@ class SubcriteriaSeeder extends Seeder
         Subcriteria::create([
             'criteria_criterias_id' => 2,
             'name' => 'Basah',
-            'variable' => 'Sangat Kurang',
-            'value' => 1,
+            'variable' => 'Kurang',
+            'value' => 2,
             'created_at' => date('2023-04-03 15:38:45'),
         ]);
 
         Subcriteria::create([
             'criteria_criterias_id' => 2,
             'name' => 'Kering',
-            'variable' => 'Kurang',
-            'value' => 2,
+            'variable' => 'Baik',
+            'value' => 3,
             'created_at' => date('2023-04-03 15:38:44'),
         ]);
 
         Subcriteria::create([
             'criteria_criterias_id' => 2,
-            'name' => 'Sangat Kering',
-            'variable' => 'Sedang',
-            'value' => 3,
+            'name' => 'Lembab',
+            'variable' => 'Sangat Baik',
+            'value' => 5,
             'created_at' => date('2023-04-03 15:38:43'),
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 2,
-            'name' => 'Lembab',
-            'variable' => 'Baik',
-            'value' => 4,
-            'created_at' => date('2023-04-03 15:38:42'),
-        ]);
-
-        Subcriteria::create([
-            'criteria_criterias_id' => 2,
-            'name' => 'Sangat Lembab',
-            'variable' => 'Sangat Baik',
-            'value' => 5,
-            'created_at' => date('2023-04-03 15:38:41'),
-        ]);
-
-        Subcriteria::create([
             'criteria_criterias_id' => 3,
-            'name' => '<6%',
+            'name' => '0-1%',
             'variable' => 'Sangat Rendah',
             'value' => 1,
             'created_at' => date('2023-04-03 15:38:40'),
@@ -103,7 +87,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 3,
-            'name' => '6-20%',
+            'name' => '1-10%',
             'variable' => 'Rendah',
             'value' => 2,
             'created_at' => date('2023-04-03 15:38:39'),
@@ -111,7 +95,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 3,
-            'name' => '21-30%',
+            'name' => '10-25%',
             'variable' => 'Sedang',
             'value' => 3,
             'created_at' => date('2023-04-03 15:38:38'),
@@ -119,7 +103,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 3,
-            'name' => '31-46%',
+            'name' => '25-45%',
             'variable' => 'Tinggi',
             'value' => 4,
             'created_at' => date('2023-04-03 15:38:37'),
@@ -127,7 +111,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 3,
-            'name' => '>46%',
+            'name' => '>=46%',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
             'created_at' => date('2023-04-03 15:38:36'),
@@ -215,7 +199,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 6,
-            'name' => '<70000',
+            'name' => '<2800',
             'variable' => 'Sangat Rendah',
             'value' => 1,
             'created_at' => date('2023-04-03 15:38:25'),
@@ -223,7 +207,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 6,
-            'name' => '70000-179000',
+            'name' => '2800-7200',
             'variable' => 'Rendah',
             'value' => 2,
             'created_at' => date('2023-04-03 15:38:24'),
@@ -231,7 +215,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 6,
-            'name' => '180000-289000',
+            'name' => '7200-11600',
             'variable' => 'Sedang',
             'value' => 3,
             'created_at' => date('2023-04-03 15:38:23'),
@@ -239,7 +223,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 6,
-            'name' => '290000-400000',
+            'name' => '11600-16000',
             'variable' => 'Tinggi',
             'value' => 4,
             'created_at' => date('2023-04-03 15:38:22'),
@@ -247,7 +231,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 6,
-            'name' => '>400000',
+            'name' => '>16000',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
             'created_at' => date('2023-04-03 15:38:21'),

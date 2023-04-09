@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ui_value', function (Blueprint $table) {
+        Schema::create('quantitative_utilities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("id_alternatives")->constrained("alternatives")->onUpdate("cascade")->onDelete("cascade");
-            $table->unsignedDecimal('spk_results');
+            $table->foreignId('alternative_alternatives_id')->constrained('alternatives')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedDecimal('result', 12, 12);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ui_value');
+        Schema::dropIfExists('quantitative_utilities');
     }
 };

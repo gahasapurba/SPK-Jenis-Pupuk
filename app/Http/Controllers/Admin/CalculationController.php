@@ -3,23 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Ui_value;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\QuantitativeUtility;
 
 class CalculationController extends Controller
 {
-    public function __construct()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        $this->middleware('auth');
-    }
-
-    function index(){
         $arrayCurahHujan = array();
-        $arrayKandunganN = array();
-        $arrayKandunganK = array();
-        $arrayKandunganP = array();
         $arrayJenisTanah = array();
+        $arrayKandunganN = array();
+        $arrayKandunganP = array();
+        $arrayKandunganK = array();
         $arrayHarga = array();
 
         $dataAlternatifCurahHujan = DB::table('alternatives')->select('rainfall')->orderBy("id", "asc")->get();
@@ -29,7 +28,7 @@ class CalculationController extends Controller
         $dataAlternatifKandunganK = DB::table('alternatives')->select('kalium')->orderBy("id", "asc")->get();
         $dataAlternatifHarga = DB::table('alternatives')->select('price')->orderBy("id", "asc")->get();
 
-        // fuzifikasi curah hujan
+        // Fuzifikasi Curah Hujan
         for($i = 0; $i < count($dataAlternatifCurahHujan); $i++) {
             if($dataAlternatifCurahHujan[$i]->rainfall > 0.5 && $dataAlternatifCurahHujan[$i]->rainfall < 20){
                 $arrayCurahHujan[$i] = 1;
@@ -44,7 +43,7 @@ class CalculationController extends Controller
             }
         }
 
-        // fuzifikasi jenis tanah
+        // Fuzifikasi Jenis Tanah
         for($i = 0; $i < count($dataAlternatifJenisTanah); $i++){
             if($dataAlternatifJenisTanah[$i]->soil_type == "Basah"){
                 $arrayJenisTanah[$i] = 2;
@@ -55,7 +54,7 @@ class CalculationController extends Controller
             }
         }
 
-        // fuzifikasi kandungan N
+        // Fuzifikasi Kandungan N
         for($i = 0; $i < count($dataAlternatifKandunganN); $i++){
             if($dataAlternatifKandunganN[$i]->nitrogen >= 0 && $dataAlternatifKandunganN[$i]->nitrogen < 1){
                 $arrayKandunganN[$i] = 1;
@@ -70,7 +69,7 @@ class CalculationController extends Controller
             }
         }
 
-        // fuzifikasi kandungan P
+        // Fuzifikasi Kandungan P
         for($i = 0; $i < count($dataAlternatifKandunganP); $i++){
             if($dataAlternatifKandunganP[$i]->phosphor < 6){
                 $arrayKandunganP[$i] = 1;
@@ -85,7 +84,7 @@ class CalculationController extends Controller
             }
         }
 
-        // fuzifikasi kandungan K
+        // Fuzifikasi Kandungan K
         for($i = 0; $i < count($dataAlternatifKandunganK); $i++){
             if($dataAlternatifKandunganK[$i]->kalium == 0){
                 $arrayKandunganK[$i] = 1;
@@ -100,7 +99,7 @@ class CalculationController extends Controller
             }
         }
 
-        // fuzifikasi harga
+        // Fuzifikasi Harga
         for($i = 0; $i < count($dataAlternatifHarga); $i++){
             if($dataAlternatifHarga[$i]->price < 2800){
                 $arrayHarga[$i] = 1;
@@ -115,9 +114,9 @@ class CalculationController extends Controller
             }
         }
 
-        $matrix = array(); // array kosong untuk menampung matriks
+        $matrix = array(); // Array Kosong Untuk Menampung Matriks
 
-        // menggabungkan array a, b, dan c menjadi matriks 2 dimensi
+        // Menggabungkan Array a, b, dan c Menjadi Matriks 2 Dimensi
         array_push($matrix, $arrayCurahHujan);
         array_push($matrix, $arrayJenisTanah);
         array_push($matrix, $arrayKandunganN);
@@ -125,135 +124,179 @@ class CalculationController extends Controller
         array_push($matrix, $arrayKandunganK);
         array_push($matrix, $arrayHarga);
 
-        $totalTiapColom = array();
-        $alternatif = DB::table('alternatives')->orderBy("id", "asc")->get();
+        $totalTiapKolom = array();
+        $alternatives = DB::table('alternatives')->orderBy("id", "asc")->get();
         $criterias = DB::table('criterias')->orderBy("id", "asc")->get();
 
         foreach ($matrix as $row) {
-            $totalTiapColom[] = array_sum($row);
+            $totalTiapKolom[] = array_sum($row);
         }
 
         $transpose = array_map(null, ...$matrix);
 
-        // normalisasi matriks
+        // Normalisasi Matriks
         $normalisasiMatriks = array();
-        for($i = 0; $i < count($alternatif); $i++) {
+        for($i = 0; $i < count($alternatives); $i++) {
             for($j = 0; $j < 6; $j++){
-                $hasil = $transpose[$i][$j]/$totalTiapColom[$j];
-                // $normalisasiMatriks[$i][$j] = number_format($hasil, 3, '.', '');
+                $hasil = $transpose[$i][$j]/$totalTiapKolom[$j];
                 $normalisasiMatriks[$i][$j] = $hasil;
             }
         }
 
-        // normalisasi matriks terbobot
+        // Normalisasi Matriks Terbobot
         $normalisasiMatriksTerbobot = array();
-        for($i = 0; $i < count($alternatif); $i++) {
+        for($i = 0; $i < count($alternatives); $i++) {
             for($j = 0; $j < 6; $j++){
                 $hasil = $normalisasiMatriks[$i][$j]*($criterias[$j]->weight);
-                // $normalisasiMatriksTerbobot[$i][$j] = number_format($hasil, 3, '.', '');
                 $normalisasiMatriksTerbobot[$i][$j] = $hasil;
             }
         }
 
         // Hitung Nilai Memaksimalkan S+
-        $totolSPlus = array();
+        $totalSPlus = array();
         for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
             $sum = 0;
             for ($j = 0; $j < 5; $j++) {
                 $sum += $normalisasiMatriksTerbobot[$i][$j];
             }
-            // $totolSPlus [] = number_format($sum, 3, '.', '');
-            $totolSPlus [] = $sum;
+            $totalSPlus [] = $sum;
         }
 
         // Hitung Nilai Minimal S-
-        $totolSNegartif = array();
+        $totalSNegatif = array();
         for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
             $sum = 0;
             for ($j = 5; $j < 6; $j++) {
                 $sum += $normalisasiMatriksTerbobot[$i][$j];
             }
-            // $totolSNegartif [] = number_format($sum, 3, '.', '');
-            $totolSNegartif [] = $sum;
+            $totalSNegatif [] = $sum;
         }
 
-        // hitung bobot relatif
-        // tahap 1 1/S-i
+        // Menghitung Bobot Relatif
+        // Tahap 1
         $tahap1 = array();
         $jumlah1SMin = 0;
-        for($i = 0; $i < count($totolSNegartif); $i++){
-            $tahap1[$i] = 1/$totolSNegartif[$i];
-            $jumlah1SMin += (1/$totolSNegartif[$i]);
+        for($i = 0; $i < count($totalSNegatif); $i++){
+            $tahap1[$i] = 1/$totalSNegatif[$i];
+            $jumlah1SMin += (1/$totalSNegatif[$i]);
         }
 
-        // tahap dua
+        // Tahap 2
         $tahap2 = array();
         $jumlahSMin = 0;
-        for($i = 0; $i < count($totolSNegartif); $i++){
+        for($i = 0; $i < count($totalSNegatif); $i++){
             $tahap2[$i] = $jumlah1SMin*$normalisasiMatriksTerbobot[$i][5];
             $jumlahSMin += $normalisasiMatriksTerbobot[$i][5];
         }
 
-        // tahap 3
+        // Tahap 3
         $tahap3 = array();
         for($i = 0; $i < count($tahap2); $i++){
             $tahap3[$i] = $jumlahSMin/$tahap2[$i];
         }
 
-        // tahap 4
+        // Tahap 4
         $tahap4 = array();
         for($i = 0; $i < count($tahap3); $i++){
-            $tahap4[$i] = $totolSPlus[$i]+$tahap3[$i];
+            $tahap4[$i] = $totalSPlus[$i]+$tahap3[$i];
         }
 
         $Qmax = max($tahap4);
 
-         // HITUNG UTILITAS KUANTITATIF
-        $ui = array();
+        // Menghitung Utilitas Kuantitatif
+        $quantitative_utility = array();
         for($i = 0; $i < count($tahap4); $i++){
-            $ui[$i] = ($tahap4[$i]*$Qmax);
+            $quantitative_utility[$i] = ($tahap4[$i]/$Qmax)*100;
         }
-
-        DB::table('ui_value')->truncate();
+        // dd($quantitative_utility);
+        DB::table('quantitative_utilities')->truncate();
         for($i = 0; $i < count($tahap4); $i++){
             $data = [
-                'id_alternatives' => $alternatif[$i]->id,
-                'spk_results' => $ui[$i],
+                'alternative_alternatives_id' => $alternatives[$i]->id,
+                'result' => $quantitative_utility[$i],
             ];
 
-            Ui_value::create($data);
+            QuantitativeUtility::create($data);
         }
 
-        $utilital_kuanti = DB::table('alternatives')
-            ->join('ui_value', 'ui_value.id_alternatives', '=', 'alternatives.id')
+        $utilitas_kuantitatif = DB::table('alternatives')
+            ->join('quantitative_utilities', 'quantitative_utilities.alternative_alternatives_id', '=', 'alternatives.id')
             ->select(
                 'alternatives.name as name',
-                'ui_value.spk_results as spk_results',
+                'quantitative_utilities.result as result',
             )
-            ->orderBy('ui_value.spk_results', 'DESC')
+            ->orderBy('quantitative_utilities.result', 'DESC')
             ->get();
 
         $data = [
             "matrix" => $transpose,
-            "alternatif" => $alternatif,
+            "alternatives" => $alternatives,
             "criterias" => $criterias,
-            "totalTiapColom" => $totalTiapColom,
+            "totalTiapKolom" => $totalTiapKolom,
             "normalisasiMatriks" => $normalisasiMatriks,
             "normalisasiMatriksTerbobot" => $normalisasiMatriksTerbobot,
-            "totolSPlus" => $totolSPlus,
-            "totolSNegartif" => $totolSNegartif,
+            "totalSPlus" => $totalSPlus,
+            "totalSNegatif" => $totalSNegatif,
 
-            // hitung bobot relatif
+            // Penghitungan Bobot Relatif
             "tahap1" => $tahap1,
-            "jumlah1SMin" => $jumlah1SMin,
             "tahap2" => $tahap2,
             "tahap3" => $tahap3,
             "tahap4" => $tahap4,
+            "jumlah1SMin" => $jumlah1SMin,
             "Qmax" => $Qmax,
-            "ui" => $ui,
-            "utilital_kuanti" => $utilital_kuanti,
+            "quantitative_utility" => $quantitative_utility,
+            "utilitas_kuantitatif" => $utilitas_kuantitatif,
         ];
 
         return view('pages.admin.calculation.index', $data);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }
