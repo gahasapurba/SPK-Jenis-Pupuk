@@ -29,6 +29,9 @@ class AssessmentController extends Controller
             $hash = new Hashids('', 10);
 
             return DataTables::of($queryAssessment)
+                ->addColumn('price', function (Alternative $alternative) {
+                    return 'Rp'.number_format($alternative->price, 0, ',', '.').',00';
+                })
                 ->addColumn('show', function($item) use($hash) {
                     return '
                         <div class="action">

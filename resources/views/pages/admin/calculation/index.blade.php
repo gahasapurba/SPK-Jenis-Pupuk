@@ -393,7 +393,7 @@
                                     <p>{{ $row->name }}</p>
                                 </td>
                                 <td class="text-center">
-                                    <p>{{ number_format($row->result, 7, '.', '') }}</p>
+                                    <p>{{ number_format($row->result, 15, '.', '') }}</p>
                                 </td>
                             </tr>
                             @endforeach

@@ -17,7 +17,7 @@ class CriteriaSeeder extends Seeder
             'code' => 'C1',
             'name' => 'Curah Hujan',
             'weight' => 0.13,
-            'type' => 'Cost',
+            'type' => 'Benefit',
             'created_at' => date('2023-04-03 15:38:50'),
         ]);
 

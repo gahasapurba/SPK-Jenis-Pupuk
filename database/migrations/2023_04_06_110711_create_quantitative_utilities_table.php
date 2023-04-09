@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('quantitative_utilities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('alternative_alternatives_id')->constrained('alternatives')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedDecimal('result', 12, 12);
+            $table->unsignedDecimal('result', 18, 15);
             $table->timestamps();
             $table->softDeletes();
         });
