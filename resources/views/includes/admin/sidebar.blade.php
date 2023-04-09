@@ -31,12 +31,12 @@
                     <li>
                         <a href="{{ route('admin.criteria.index') }}" class="{{ (request()->is('admin/criteria')) ? 'active' : '' }}">Daftar Data Kriteria</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('admin.criteria.create') }}" class="{{ (request()->is('admin/criteria/create')) ? 'active' : '' }}">Buat Data Kriteria</a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                         <a href="{{ route('admin.criteria.trash') }}" class="{{ (request()->is('admin/criteria/trash')) ? 'active' : '' }}">Arsip Data Kriteria</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             {{-- Data Subkriteria --}}
@@ -51,12 +51,12 @@
                     <li>
                         <a href="{{ route('admin.subcriteria.index') }}" class="{{ (request()->is('admin/subcriteria')) ? 'active' : '' }}">Daftar Data Subkriteria</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('admin.subcriteria.create') }}" class="{{ (request()->is('admin/subcriteria/create')) ? 'active' : '' }}">Buat Data Subkriteria</a>
-                    </li>
-                    <li>
+                    </li> --}}
+                    {{-- <li>
                         <a href="{{ route('admin.subcriteria.trash') }}" class="{{ (request()->is('admin/subcriteria/trash')) ? 'active' : '' }}">Arsip Data Subkriteria</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </li>
             {{-- Data Alternatif --}}
