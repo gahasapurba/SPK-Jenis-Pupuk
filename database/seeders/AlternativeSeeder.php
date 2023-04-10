@@ -16,7 +16,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Phonska',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 15,
             'phosphor' => 10,
             'kalium' => 12,
@@ -60,7 +60,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Petro Ningrat',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 12,
             'phosphor' => 11,
             'kalium' => 20,
@@ -71,7 +71,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Mutiara Sprinter 20-10-10',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 20,
             'phosphor' => 10,
             'kalium' => 10,
@@ -82,7 +82,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Mutiara Professional 9-25-25',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 9,
             'phosphor' => 25,
             'kalium' => 25,
@@ -93,7 +93,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Mutiara Grower 15-9-20+TE',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 15,
             'phosphor' => 9,
             'kalium' => 20,
@@ -115,7 +115,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Mutiara Partner 13-13-24',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 13,
             'phosphor' => 13,
             'kalium' => 24,
@@ -137,7 +137,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'Neo Kristalon Kuning',
             'rainfall' => 155,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 13,
             'phosphor' => 40,
             'kalium' => 13,
@@ -148,7 +148,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'Neo Kristalon Merah',
             'rainfall' => 155,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 12,
             'phosphor' => 12,
             'kalium' => 36,
@@ -159,7 +159,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'Fertila Padi-1',
             'rainfall' => 155,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 8,
             'phosphor' => 18,
             'kalium' => 18,
@@ -170,7 +170,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'Fertila Padi-2',
             'rainfall' => 155,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 6,
             'phosphor' => 18,
             'kalium' => 28,
@@ -225,7 +225,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'Magnum',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 15,
             'phosphor' => 10,
             'kalium' => 22,
@@ -269,7 +269,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Pelangi 20-10-10',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 20,
             'phosphor' => 10,
             'kalium' => 10,
@@ -280,7 +280,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Pelangi 12-12-17-2',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 12,
             'phosphor' => 12,
             'kalium' => 17,
@@ -291,7 +291,7 @@ class AlternativeSeeder extends Seeder
         Alternative::create([
             'name' => 'NPK Pelangi 13-6-27-4',
             'rainfall' => 50,
-            'soil_type' => 'Lembab',
+            'soil_type' => 'Basah',
             'nitrogen' => 13,
             'phosphor' => 6,
             'kalium' => 27,
