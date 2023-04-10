@@ -1,4 +1,4 @@
-<aside class="sidebar-nav-wrapper @if(Auth::check() && Auth::user()->hasVerifiedEmail()) @else active @endif">
+<aside class="sidebar-nav-wrapper @if((request()->is('password/reset*'))) @if(Auth::check() && Auth::user()->hasVerifiedEmail()) @else active @endif @endif">
     @if(Auth::check() && Auth::user()->hasVerifiedEmail())
     <div class="navbar-logo">
         <a href="{{ route('dashboard.index') }}">

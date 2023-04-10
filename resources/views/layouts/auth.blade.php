@@ -12,8 +12,15 @@
         @stack('addon-style')
     </head>
     <body>
-        {{-- Sidebar --}}
-        @include('includes.dashboard.sidebar')
+        @if ((request()->is('password/reset*')))
+        @if(Auth::check() && Auth::user()->hasVerifiedEmail())
+            {{-- Sidebar --}}
+            @include('includes.dashboard.sidebar')
+        @endif
+        @else
+            {{-- Sidebar Overlay --}}
+            <div class="overlay"></div>
+        @endif
         <main class="main-wrapper @if(Auth::check() && Auth::user()->hasVerifiedEmail()) @else active @endif">
             {{-- Header --}}
             @include('includes.dashboard.header')
