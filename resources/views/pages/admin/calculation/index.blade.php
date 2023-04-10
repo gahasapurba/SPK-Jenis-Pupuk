@@ -44,7 +44,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $alternatives[$no]->name }}</p>
                                 </td>
                                 @foreach ($row as $col)
@@ -96,7 +96,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $alternatives[$no]->name }}</p>
                                 </td>
                                 @foreach ($row as $col)
@@ -173,7 +173,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $alternatives[$no]->name }}</p>
                                 </td>
                                 @foreach ($row as $col)
@@ -240,7 +240,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $alternatives[$no]->name }}</p>
                                 </td>
                                 <td class="text-center">
@@ -275,7 +275,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $alternatives[$no]->name }}</p>
                                 </td>
                                 <td class="text-center">
@@ -319,7 +319,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $alternatives[$no]->name }}</p>
                                 </td>
                                 <td class="text-center">
@@ -389,7 +389,7 @@
                                 <td class="text-center">
                                     <p>{{ $no+1 }}</p>
                                 </td>
-                                <td class="text-center">
+                                <td>
                                     <p>{{ $row->name }}</p>
                                 </td>
                                 <td class="text-center">

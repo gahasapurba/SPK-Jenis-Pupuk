@@ -12,7 +12,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xl-3 col-lg-4 col-sm-6">
+    <div class="col-xl-3 col-lg-3 col-sm-6">
         <div class="icon-card icon-card-2 mb-30">
             <div class="d-flex align-items-center">
                 <div class="icon primary">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-lg-4 col-sm-6">
+    <div class="col-xl-3 col-lg-3 col-sm-6">
         <div class="icon-card icon-card-2 mb-30">
             <div class="d-flex align-items-center">
                 <div class="icon primary">
@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-lg-4 col-sm-6">
+    <div class="col-xl-3 col-lg-3 col-sm-6">
         <div class="icon-card icon-card-2 mb-30">
             <div class="d-flex align-items-center">
                 <div class="icon primary">
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-lg-4 col-sm-6">
+    <div class="col-xl-3 col-lg-3 col-sm-6">
         <div class="icon-card icon-card-2 mb-30">
             <div class="d-flex align-items-center">
                 <div class="icon primary">

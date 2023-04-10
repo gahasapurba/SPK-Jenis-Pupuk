@@ -63,7 +63,7 @@
                 searchable: false,
                 class: 'text-center min-width',
             },
-            { data: 'alternative_alternatives_id', name: 'alternative_alternatives_id', class: 'text-center min-width' },
+            { data: 'alternative_alternatives_id', name: 'alternative_alternatives_id', class: 'min-width' },
             { data: 'result', name: 'result', class: 'text-center min-width' },
         ],
         dom: 'Blfrtip',

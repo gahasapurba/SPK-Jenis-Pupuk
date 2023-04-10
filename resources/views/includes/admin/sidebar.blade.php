@@ -130,7 +130,7 @@
             {{-- Divider --}}
             <span class="divider"><hr /></span>
             {{-- Pengguna --}}
-            <li class="nav-item nav-item-has-children">
+            {{-- <li class="nav-item nav-item-has-children">
                 <a href="#0" class="{{ (request()->is('admin/user*')) ? '' : 'collapsed' }}" data-bs-toggle="collapse" data-bs-target="#ddmenu_7" aria-controls="ddmenu_7" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon">
                         <svg width="22" height="22" viewBox="0 0 22 22">
@@ -147,7 +147,7 @@
                         <a href="{{ route('admin.user.trash') }}" class="{{ (request()->is('admin/user/trash')) ? 'active' : '' }}">Arsip Pengguna</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </aside>

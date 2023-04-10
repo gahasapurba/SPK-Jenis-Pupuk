@@ -69,7 +69,7 @@
                 searchable: false,
                 class: 'text-center min-width',
             },
-            { data: 'name', name: 'name', class: 'text-center min-width' },
+            { data: 'name', name: 'name', class: 'min-width' },
             {
                 data: 'show',
                 name: 'show',

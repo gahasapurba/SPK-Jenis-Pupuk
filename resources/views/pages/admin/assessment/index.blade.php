@@ -87,7 +87,7 @@
                 searchable: false,
                 class: 'text-center min-width',
             },
-            { data: 'name', name: 'name', class: 'text-center min-width' },
+            { data: 'name', name: 'name', class: 'min-width' },
             { data: 'rainfall', name: 'rainfall', class: 'text-center min-width' },
             { data: 'soil_type', name: 'soil_type', class: 'text-center min-width' },
             { data: 'nitrogen', name: 'nitrogen', class: 'text-center min-width' },
