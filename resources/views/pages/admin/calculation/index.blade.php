@@ -253,7 +253,7 @@
                 </div>
             </div>
             <div class="card-style mb-30">
-                <h6 class="mb-10">Nilai Memaksimalkan S- (@foreach ($criterias as $crit) @if($crit->type == "Cost") {{ $crit->code }} @endif @endforeach)</h6>
+                <h6 class="mb-10">Nilai Meminimalkan S- (@foreach ($criterias as $crit) @if($crit->type == "Cost") {{ $crit->code }} @endif @endforeach)</h6>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>

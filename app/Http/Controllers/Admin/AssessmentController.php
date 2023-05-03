@@ -6,6 +6,7 @@ use Hashids\Hashids;
 use App\Models\Criteria;
 use App\Models\Alternative;
 use App\Models\Subcriteria;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
 use App\Http\Requests\Admin\StoreAssessmentRequest;
@@ -74,34 +75,15 @@ class AssessmentController extends Controller
      */
     public function create()
     {
-        $alternatives = Alternative::all();
-        $soil_type_criteria = Criteria::where('name', 'Jenis Tanah')->first();
-        $soil_types = Subcriteria::where('criteria_criterias_id', $soil_type_criteria->id)->get();
-
-        return view('pages.admin.assessment.create',[
-            'alternatives' => $alternatives,
-            'soil_types' => $soil_types,
-        ]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAssessmentRequest $request)
+    public function store(Request $request)
     {
-        $data = [
-            'name' => $request->name,
-            'rainfall' => $request->rainfall,
-            'soil_type' => $request->soil_type,
-            'nitrogen' => $request->nitrogen,
-            'phosphor' => $request->phosphor,
-            'kalium' => $request->kalium,
-            'price' => $request->price,
-        ];
-
-        Alternative::create($data);
-
-        return redirect()->route('admin.assessment.index')->with('success', 'Penilaian Berhasil Dibuat!');
+        //
     }
 
     /**
@@ -124,14 +106,12 @@ class AssessmentController extends Controller
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($assessment));
-        $alternatives = Alternative::all();
         $soil_type_criteria = Criteria::where('name', 'Jenis Tanah')->first();
         $soil_types = Subcriteria::where('criteria_criterias_id', $soil_type_criteria->id)->get();
 
         return view('pages.admin.assessment.edit', [
             'hash' => $hash,
             'item' => $item,
-            'alternatives' => $alternatives,
             'soil_types' => $soil_types,
         ]);
     }
@@ -145,7 +125,6 @@ class AssessmentController extends Controller
         $item = Alternative::findOrFail($hash->decodeHex($assessment));
 
         $data = [
-            'name' => $request->name,
             'rainfall' => $request->rainfall,
             'soil_type' => $request->soil_type,
             'nitrogen' => $request->nitrogen,

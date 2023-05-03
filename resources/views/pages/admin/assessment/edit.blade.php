@@ -13,19 +13,9 @@
                 @csrf
                     <div class="row">
                         <div class="col-12">
-                            <div class="select-style-1">
+                            <div class="input-style-1">
                                 <label for="name">Nama Alternatif</label>
-                                <select name="name" class="select2 form-control bg-transparent @error('name') is-invalid @enderror" autofocus>
-                                    <option value="">Pilih Nama Alternatif</option>
-                                    @foreach ($alternatives as $alternative)
-                                        <option value="{{ $alternative->name }}" @if($item->name == $alternative->name) selected @endif>{{ $alternative->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('name')
-                                    <small class="text-danger" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </small>
-                                @enderror
+                                <input type="text" name="name" class="bg-transparent" value="{{ $item->name }}" readonly/>
                             </div>
                             <div class="input-style-1">
                                 <label for="rainfall">Curah Hujan Alternatif</label>

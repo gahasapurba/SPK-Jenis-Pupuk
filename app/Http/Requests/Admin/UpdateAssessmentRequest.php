@@ -22,7 +22,6 @@ class UpdateAssessmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|min:4',
             'rainfall' => 'required|string',
             'soil_type' => 'required|string',
             'nitrogen' => 'required|integer',

@@ -92,9 +92,6 @@
                         <a href="{{ route('admin.assessment.index') }}" class="{{ (request()->is('admin/assessment')) ? 'active' : '' }}">Daftar Data Penilaian</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.assessment.create') }}" class="{{ (request()->is('admin/assessment/create')) ? 'active' : '' }}">Buat Data Penilaian</a>
-                    </li>
-                    <li>
                         <a href="{{ route('admin.assessment.trash') }}" class="{{ (request()->is('admin/assessment/trash')) ? 'active' : '' }}">Arsip Data Penilaian</a>
                     </li>
                 </ul>
