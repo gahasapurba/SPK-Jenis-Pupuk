@@ -14,7 +14,7 @@ class SubcriteriaSeeder extends Seeder
     public function run(): void
     {
         Subcriteria::create([
-            'criteria_criterias_id' => 2,
+            'criteria_criterias_id' => 1,
             'name' => 'Basah',
             'variable' => 'Kurang',
             'value' => 2,
@@ -22,7 +22,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 2,
+            'criteria_criterias_id' => 1,
             'name' => 'Kering',
             'variable' => 'Baik',
             'value' => 3,
@@ -30,7 +30,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 2,
+            'criteria_criterias_id' => 1,
             'name' => 'Lembab',
             'variable' => 'Sangat Baik',
             'value' => 5,
@@ -38,7 +38,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 3,
+            'criteria_criterias_id' => 2,
             'name' => '0-1%',
             'variable' => 'Sangat Rendah',
             'value' => 1,
@@ -46,7 +46,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 3,
+            'criteria_criterias_id' => 2,
             'name' => '1-10%',
             'variable' => 'Rendah',
             'value' => 2,
@@ -54,7 +54,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 3,
+            'criteria_criterias_id' => 2,
             'name' => '10-25%',
             'variable' => 'Sedang',
             'value' => 3,
@@ -62,7 +62,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 3,
+            'criteria_criterias_id' => 2,
             'name' => '25-45%',
             'variable' => 'Tinggi',
             'value' => 4,
@@ -70,7 +70,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 3,
+            'criteria_criterias_id' => 2,
             'name' => '>=46%',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
@@ -78,7 +78,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 4,
+            'criteria_criterias_id' => 3,
             'name' => '<6%',
             'variable' => 'Sangat Rendah',
             'value' => 1,
@@ -86,7 +86,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 4,
+            'criteria_criterias_id' => 3,
             'name' => '6-20%',
             'variable' => 'Rendah',
             'value' => 2,
@@ -94,7 +94,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 4,
+            'criteria_criterias_id' => 3,
             'name' => '21-30%',
             'variable' => 'Sedang',
             'value' => 3,
@@ -102,7 +102,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 4,
+            'criteria_criterias_id' => 3,
             'name' => '31-46%',
             'variable' => 'Tinggi',
             'value' => 4,
@@ -110,7 +110,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 4,
+            'criteria_criterias_id' => 3,
             'name' => '>46%',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
@@ -118,7 +118,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 5,
+            'criteria_criterias_id' => 4,
             'name' => '0%',
             'variable' => 'Sangat Rendah',
             'value' => 1,
@@ -126,7 +126,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 5,
+            'criteria_criterias_id' => 4,
             'name' => '1-15%',
             'variable' => 'Rendah',
             'value' => 2,
@@ -134,7 +134,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 5,
+            'criteria_criterias_id' => 4,
             'name' => '16-30%',
             'variable' => 'Sedang',
             'value' => 3,
@@ -142,7 +142,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 5,
+            'criteria_criterias_id' => 4,
             'name' => '30-45%',
             'variable' => 'Tinggi',
             'value' => 4,
@@ -150,7 +150,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 5,
+            'criteria_criterias_id' => 4,
             'name' => '>45%',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
@@ -158,7 +158,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 6,
+            'criteria_criterias_id' => 5,
             'name' => '<2800',
             'variable' => 'Sangat Rendah',
             'value' => 1,
@@ -166,7 +166,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 6,
+            'criteria_criterias_id' => 5,
             'name' => '2800-7200',
             'variable' => 'Rendah',
             'value' => 2,
@@ -174,7 +174,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 6,
+            'criteria_criterias_id' => 5,
             'name' => '7200-11600',
             'variable' => 'Sedang',
             'value' => 3,
@@ -182,7 +182,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 6,
+            'criteria_criterias_id' => 5,
             'name' => '11600-16000',
             'variable' => 'Tinggi',
             'value' => 4,
@@ -190,7 +190,7 @@ class SubcriteriaSeeder extends Seeder
         ]);
 
         Subcriteria::create([
-            'criteria_criterias_id' => 6,
+            'criteria_criterias_id' => 5,
             'name' => '>16000',
             'variable' => 'Sangat Tinggi',
             'value' => 5,

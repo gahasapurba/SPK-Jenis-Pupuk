@@ -125,7 +125,6 @@ class AssessmentController extends Controller
         $item = Alternative::findOrFail($hash->decodeHex($assessment));
 
         $data = [
-            'rainfall' => $request->rainfall,
             'soil_type' => $request->soil_type,
             'nitrogen' => $request->nitrogen,
             'phosphor' => $request->phosphor,

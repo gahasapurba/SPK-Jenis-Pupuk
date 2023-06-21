@@ -14,7 +14,7 @@ class CriteriaSeeder extends Seeder
     public function run(): void
     {
         Criteria::create([
-            'code' => 'C2',
+            'code' => 'C1',
             'name' => 'Jenis Tanah',
             'weight' => 0.17,
             'type' => 'Benefit',
@@ -22,7 +22,7 @@ class CriteriaSeeder extends Seeder
         ]);
 
         Criteria::create([
-            'code' => 'C3',
+            'code' => 'C2',
             'name' => 'Kandungan N',
             'weight' => 0.15,
             'type' => 'Benefit',
@@ -30,7 +30,7 @@ class CriteriaSeeder extends Seeder
         ]);
 
         Criteria::create([
-            'code' => 'C4',
+            'code' => 'C3',
             'name' => 'Kandungan P',
             'weight' => 0.30,
             'type' => 'Benefit',
@@ -38,7 +38,7 @@ class CriteriaSeeder extends Seeder
         ]);
 
         Criteria::create([
-            'code' => 'C5',
+            'code' => 'C4',
             'name' => 'Kandungan K',
             'weight' => 0.20,
             'type' => 'Benefit',
@@ -46,7 +46,7 @@ class CriteriaSeeder extends Seeder
         ]);
 
         Criteria::create([
-            'code' => 'C6',
+            'code' => 'C5',
             'name' => 'Harga Pupuk',
             'weight' => 0.05,
             'type' => 'Cost',

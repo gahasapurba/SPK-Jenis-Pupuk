@@ -15,10 +15,6 @@
                             <input type="text" name="name" class="bg-transparent" value="{{ $item->name }}" readonly/>
                         </div>
                         <div class="input-style-1">
-                            <label for="rainfall">Curah Hujan Alternatif</label>
-                            <input type="number" min="0" step="0.01" name="rainfall" class="bg-transparent" value="{{ $item->rainfall }}" readonly/>
-                        </div>
-                        <div class="input-style-1">
                             <label for="soil_type">Jenis Tanah Alternatif</label>
                             <input type="text" name="soil_type" class="bg-transparent" value="{{ $item->soil_type }}" readonly/>
                         </div>

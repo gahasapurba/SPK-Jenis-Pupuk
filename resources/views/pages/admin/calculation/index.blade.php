@@ -33,9 +33,6 @@
                                 <th class="text-center">
                                     <h6>C5</h6>
                                 </th>
-                                <th class="text-center">
-                                    <h6>C6</h6>
-                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,9 +81,6 @@
                                 </th>
                                 <th class="text-center">
                                     <h6>C5</h6>
-                                </th>
-                                <th class="text-center">
-                                    <h6>C6</h6>
                                 </th>
                             </tr>
                         </thead>
@@ -161,9 +155,6 @@
                                 </th>
                                 <th class="text-center">
                                     <h6>C5</h6>
-                                </th>
-                                <th class="text-center">
-                                    <h6>C6</h6>
                                 </th>
                             </tr>
                         </thead>

@@ -14,34 +14,17 @@ class CalculationController extends Controller
      */
     public function index()
     {
-        $arrayCurahHujan = array();
         $arrayJenisTanah = array();
         $arrayKandunganN = array();
         $arrayKandunganP = array();
         $arrayKandunganK = array();
         $arrayHarga = array();
 
-        $dataAlternatifCurahHujan = DB::table('alternatives')->select('rainfall')->orderBy("id", "asc")->get();
         $dataAlternatifJenisTanah = DB::table('alternatives')->select('soil_type')->orderBy("id", "asc")->get();
         $dataAlternatifKandunganN = DB::table('alternatives')->select('nitrogen')->orderBy("id", "asc")->get();
         $dataAlternatifKandunganP = DB::table('alternatives')->select('phosphor')->orderBy("id", "asc")->get();
         $dataAlternatifKandunganK = DB::table('alternatives')->select('kalium')->orderBy("id", "asc")->get();
         $dataAlternatifHarga = DB::table('alternatives')->select('price')->orderBy("id", "asc")->get();
-
-        // Fuzifikasi Curah Hujan
-        for($i = 0; $i < count($dataAlternatifCurahHujan); $i++) {
-            if($dataAlternatifCurahHujan[$i]->rainfall > 0.5 && $dataAlternatifCurahHujan[$i]->rainfall < 20){
-                $arrayCurahHujan[$i] = 1;
-            }else if($dataAlternatifCurahHujan[$i]->rainfall >= 20 && $dataAlternatifCurahHujan[$i]->rainfall < 50){
-                $arrayCurahHujan[$i] = 2;
-            }else if($dataAlternatifCurahHujan[$i]->rainfall >= 50 && $dataAlternatifCurahHujan[$i]->rainfall < 100){
-                $arrayCurahHujan[$i] = 3;
-            }else if($dataAlternatifCurahHujan[$i]->rainfall >= 100 && $dataAlternatifCurahHujan[$i]->rainfall <= 150){
-                $arrayCurahHujan[$i] = 4;
-            }else if($dataAlternatifCurahHujan[$i]->rainfall > 150){
-                $arrayCurahHujan[$i] = 5;
-            }
-        }
 
         // Fuzifikasi Jenis Tanah
         for($i = 0; $i < count($dataAlternatifJenisTanah); $i++){
@@ -117,7 +100,6 @@ class CalculationController extends Controller
         $matrix = array(); // Array Kosong Untuk Menampung Matriks
 
         // Menggabungkan Array a, b, dan c Menjadi Matriks 2 Dimensi
-        array_push($matrix, $arrayCurahHujan);
         array_push($matrix, $arrayJenisTanah);
         array_push($matrix, $arrayKandunganN);
         array_push($matrix, $arrayKandunganP);
@@ -137,7 +119,7 @@ class CalculationController extends Controller
         // Normalisasi Matriks
         $normalisasiMatriks = array();
         for($i = 0; $i < count($alternatives); $i++) {
-            for($j = 0; $j < 6; $j++){
+            for($j = 0; $j < 5; $j++){
                 $hasil = $transpose[$i][$j]/$totalTiapKolom[$j];
                 $normalisasiMatriks[$i][$j] = $hasil;
             }
@@ -146,7 +128,7 @@ class CalculationController extends Controller
         // Normalisasi Matriks Terbobot
         $normalisasiMatriksTerbobot = array();
         for($i = 0; $i < count($alternatives); $i++) {
-            for($j = 0; $j < 6; $j++){
+            for($j = 0; $j < 5; $j++){
                 $hasil = $normalisasiMatriks[$i][$j]*($criterias[$j]->weight);
                 $normalisasiMatriksTerbobot[$i][$j] = $hasil;
             }
@@ -156,7 +138,7 @@ class CalculationController extends Controller
         $totalSPlus = array();
         for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
             $sum = 0;
-            for ($j = 0; $j < 5; $j++) {
+            for ($j = 0; $j < 4; $j++) {
                 $sum += $normalisasiMatriksTerbobot[$i][$j];
             }
             $totalSPlus [] = $sum;
@@ -166,7 +148,7 @@ class CalculationController extends Controller
         $totalSNegatif = array();
         for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
             $sum = 0;
-            for ($j = 5; $j < 6; $j++) {
+            for ($j = 4; $j < 5; $j++) {
                 $sum += $normalisasiMatriksTerbobot[$i][$j];
             }
             $totalSNegatif [] = $sum;
@@ -185,8 +167,8 @@ class CalculationController extends Controller
         $tahap2 = array();
         $jumlahSMin = 0;
         for($i = 0; $i < count($totalSNegatif); $i++){
-            $tahap2[$i] = $jumlah1SMin*$normalisasiMatriksTerbobot[$i][5];
-            $jumlahSMin += $normalisasiMatriksTerbobot[$i][5];
+            $tahap2[$i] = $jumlah1SMin*$normalisasiMatriksTerbobot[$i][4];
+            $jumlahSMin += $normalisasiMatriksTerbobot[$i][4];
         }
 
         // Tahap 3

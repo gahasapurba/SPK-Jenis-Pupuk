@@ -17,15 +17,6 @@
                                 <label for="name">Nama Alternatif</label>
                                 <input type="text" name="name" class="bg-transparent" value="{{ $item->name }}" readonly/>
                             </div>
-                            <div class="input-style-1">
-                                <label for="rainfall">Curah Hujan Alternatif</label>
-                                <input type="number" min="0" step="0.01" name="rainfall" placeholder="Masukkan Curah Hujan Alternatif" class="form-control bg-transparent @error('rainfall') is-invalid @enderror" value="{{ $item->rainfall }}"/>
-                                @error('rainfall')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
                             <div class="select-style-1">
                                 <label for="soil_type">Jenis Tanah Alternatif</label>
                                 <select name="soil_type" class="select2 form-control bg-transparent @error('soil_type') is-invalid @enderror">
