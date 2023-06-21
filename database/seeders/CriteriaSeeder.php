@@ -14,14 +14,6 @@ class CriteriaSeeder extends Seeder
     public function run(): void
     {
         Criteria::create([
-            'code' => 'C1',
-            'name' => 'Curah Hujan',
-            'weight' => 0.13,
-            'type' => 'Benefit',
-            'created_at' => date('2023-04-03 15:38:50'),
-        ]);
-
-        Criteria::create([
             'code' => 'C2',
             'name' => 'Jenis Tanah',
             'weight' => 0.17,

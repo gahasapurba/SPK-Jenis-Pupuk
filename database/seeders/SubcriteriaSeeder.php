@@ -14,46 +14,6 @@ class SubcriteriaSeeder extends Seeder
     public function run(): void
     {
         Subcriteria::create([
-            'criteria_criterias_id' => 1,
-            'name' => '0.5-20 mm/hari',
-            'variable' => 'Sangat Rendah',
-            'value' => 1,
-            'created_at' => date('2023-04-03 15:38:50'),
-        ]);
-
-        Subcriteria::create([
-            'criteria_criterias_id' => 1,
-            'name' => '20-50 mm/hari',
-            'variable' => 'Rendah',
-            'value' => 2,
-            'created_at' => date('2023-04-03 15:38:49'),
-        ]);
-
-        Subcriteria::create([
-            'criteria_criterias_id' => 1,
-            'name' => '50-100 mm/hari',
-            'variable' => 'Sedang',
-            'value' => 3,
-            'created_at' => date('2023-04-03 15:38:48'),
-        ]);
-
-        Subcriteria::create([
-            'criteria_criterias_id' => 1,
-            'name' => '100-150 mm/hari',
-            'variable' => 'Tinggi',
-            'value' => 4,
-            'created_at' => date('2023-04-03 15:38:47'),
-        ]);
-
-        Subcriteria::create([
-            'criteria_criterias_id' => 1,
-            'name' => '>150 mm/hari',
-            'variable' => 'Sangat Tinggi',
-            'value' => 5,
-            'created_at' => date('2023-04-03 15:38:46'),
-        ]);
-
-        Subcriteria::create([
             'criteria_criterias_id' => 2,
             'name' => 'Basah',
             'variable' => 'Kurang',
