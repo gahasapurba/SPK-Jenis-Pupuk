@@ -25,9 +25,6 @@
                                     <h5>Nama Alternatif</h5>
                                 </th>
                                 <th class="text-center">
-                                    <h5>Jenis Tanah Alternatif</h5>
-                                </th>
-                                <th class="text-center">
                                     <h5>Kandungan N Alternatif</h5>
                                 </th>
                                 <th class="text-center">
@@ -85,7 +82,6 @@
                 class: 'text-center min-width',
             },
             { data: 'name', name: 'name', class: 'text-center min-width' },
-            { data: 'soil_type', name: 'soil_type', class: 'text-center min-width' },
             { data: 'nitrogen', name: 'nitrogen', class: 'text-center min-width' },
             { data: 'phosphor', name: 'phosphor', class: 'text-center min-width' },
             { data: 'kalium', name: 'kalium', class: 'text-center min-width' },
@@ -111,31 +107,31 @@
             {
                 extend: 'copy',
                 exportOptions: {
-                    columns: [1, 2, 3, 4, 5, 6, 7, 8]
+                    columns: [1, 2, 3, 4, 5, 6, 7]
                 }
             },
             {
                 extend: 'csv',
                 exportOptions: {
-                    columns: [1, 2, 3, 4, 5, 6, 7, 8]
+                    columns: [1, 2, 3, 4, 5, 6, 7]
                 }
             },
             {
                 extend: 'excel',
                 exportOptions: {
-                    columns: [1, 2, 3, 4, 5, 6, 7, 8]
+                    columns: [1, 2, 3, 4, 5, 6, 7]
                 }
             },
             {
                 extend: 'pdf',
                 exportOptions: {
-                    columns: [1, 2, 3, 4, 5, 6, 7, 8]
+                    columns: [1, 2, 3, 4, 5, 6, 7]
                 }
             },
             {
                 extend: 'print',
                 exportOptions: {
-                    columns: [1, 2, 3, 4, 5, 6, 7, 8]
+                    columns: [1, 2, 3, 4, 5, 6, 7]
                 }
             },
         ],

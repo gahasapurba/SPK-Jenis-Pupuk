@@ -17,20 +17,6 @@
                                 <label for="name">Nama Alternatif</label>
                                 <input type="text" name="name" class="bg-transparent" value="{{ $item->name }}" readonly/>
                             </div>
-                            <div class="select-style-1">
-                                <label for="soil_type">Jenis Tanah Alternatif</label>
-                                <select name="soil_type" class="select2 form-control bg-transparent @error('soil_type') is-invalid @enderror">
-                                    <option value="">Pilih Jenis Tanah Alternatif</option>
-                                    @foreach ($soil_types as $soil_type)
-                                        <option value="{{ $soil_type->name }}" @if($item->soil_type == $soil_type->name) selected @endif>{{ $soil_type->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('soil_type')
-                                    <small class="text-danger" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </small>
-                                @enderror
-                            </div>
                             <div class="input-style-1">
                                 <label for="nitrogen">Kandungan N Alternatif</label>
                                 <input type="number" min="0" step="0.01" name="nitrogen" placeholder="Masukkan Kandungan N Alternatif" class="form-control bg-transparent @error('nitrogen') is-invalid @enderror" value="{{ $item->nitrogen }}"/>

@@ -14,28 +14,15 @@ class CalculationController extends Controller
      */
     public function index()
     {
-        $arrayJenisTanah = array();
         $arrayKandunganN = array();
         $arrayKandunganP = array();
         $arrayKandunganK = array();
         $arrayHarga = array();
 
-        $dataAlternatifJenisTanah = DB::table('alternatives')->select('soil_type')->orderBy("id", "asc")->get();
         $dataAlternatifKandunganN = DB::table('alternatives')->select('nitrogen')->orderBy("id", "asc")->get();
         $dataAlternatifKandunganP = DB::table('alternatives')->select('phosphor')->orderBy("id", "asc")->get();
         $dataAlternatifKandunganK = DB::table('alternatives')->select('kalium')->orderBy("id", "asc")->get();
         $dataAlternatifHarga = DB::table('alternatives')->select('price')->orderBy("id", "asc")->get();
-
-        // Fuzifikasi Jenis Tanah
-        for($i = 0; $i < count($dataAlternatifJenisTanah); $i++){
-            if($dataAlternatifJenisTanah[$i]->soil_type == "Basah"){
-                $arrayJenisTanah[$i] = 2;
-            }else if($dataAlternatifJenisTanah[$i]->soil_type == "Kering"){
-                $arrayJenisTanah[$i] = 3;
-            }else if($dataAlternatifJenisTanah[$i]->soil_type == "Lembab"){
-                $arrayJenisTanah[$i] = 5;
-            }
-        }
 
         // Fuzifikasi Kandungan N
         for($i = 0; $i < count($dataAlternatifKandunganN); $i++){
@@ -100,7 +87,6 @@ class CalculationController extends Controller
         $matrix = array(); // Array Kosong Untuk Menampung Matriks
 
         // Menggabungkan Array a, b, dan c Menjadi Matriks 2 Dimensi
-        array_push($matrix, $arrayJenisTanah);
         array_push($matrix, $arrayKandunganN);
         array_push($matrix, $arrayKandunganP);
         array_push($matrix, $arrayKandunganK);
@@ -119,7 +105,7 @@ class CalculationController extends Controller
         // Normalisasi Matriks
         $normalisasiMatriks = array();
         for($i = 0; $i < count($alternatives); $i++) {
-            for($j = 0; $j < 5; $j++){
+            for($j = 0; $j < 4; $j++){
                 $hasil = $transpose[$i][$j]/$totalTiapKolom[$j];
                 $normalisasiMatriks[$i][$j] = $hasil;
             }
@@ -128,7 +114,7 @@ class CalculationController extends Controller
         // Normalisasi Matriks Terbobot
         $normalisasiMatriksTerbobot = array();
         for($i = 0; $i < count($alternatives); $i++) {
-            for($j = 0; $j < 5; $j++){
+            for($j = 0; $j < 4; $j++){
                 $hasil = $normalisasiMatriks[$i][$j]*($criterias[$j]->weight);
                 $normalisasiMatriksTerbobot[$i][$j] = $hasil;
             }
@@ -138,7 +124,7 @@ class CalculationController extends Controller
         $totalSPlus = array();
         for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
             $sum = 0;
-            for ($j = 0; $j < 4; $j++) {
+            for ($j = 0; $j < 3; $j++) {
                 $sum += $normalisasiMatriksTerbobot[$i][$j];
             }
             $totalSPlus [] = $sum;
@@ -148,7 +134,7 @@ class CalculationController extends Controller
         $totalSNegatif = array();
         for ($i = 0; $i < count($normalisasiMatriksTerbobot); $i++) {
             $sum = 0;
-            for ($j = 4; $j < 5; $j++) {
+            for ($j = 3; $j < 4; $j++) {
                 $sum += $normalisasiMatriksTerbobot[$i][$j];
             }
             $totalSNegatif [] = $sum;
@@ -167,8 +153,8 @@ class CalculationController extends Controller
         $tahap2 = array();
         $jumlahSMin = 0;
         for($i = 0; $i < count($totalSNegatif); $i++){
-            $tahap2[$i] = $jumlah1SMin*$normalisasiMatriksTerbobot[$i][4];
-            $jumlahSMin += $normalisasiMatriksTerbobot[$i][4];
+            $tahap2[$i] = $jumlah1SMin*$normalisasiMatriksTerbobot[$i][3];
+            $jumlahSMin += $normalisasiMatriksTerbobot[$i][3];
         }
 
         // Tahap 3

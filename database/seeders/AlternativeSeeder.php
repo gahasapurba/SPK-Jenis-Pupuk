@@ -15,7 +15,6 @@ class AlternativeSeeder extends Seeder
     {
         Alternative::create([
             'name' => 'NPK Phonska',
-            'soil_type' => 'Basah',
             'nitrogen' => 15,
             'phosphor' => 10,
             'kalium' => 12,
@@ -25,7 +24,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Phonska Plus 15-15-15',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -35,7 +33,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Kebomas 15-15-15',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -45,7 +42,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Petro Nitrat',
-            'soil_type' => 'Lembab',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
@@ -55,7 +51,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Petro Ningrat',
-            'soil_type' => 'Basah',
             'nitrogen' => 12,
             'phosphor' => 11,
             'kalium' => 20,
@@ -65,7 +60,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Mutiara Sprinter 20-10-10',
-            'soil_type' => 'Basah',
             'nitrogen' => 20,
             'phosphor' => 10,
             'kalium' => 10,
@@ -75,7 +69,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Mutiara Professional 9-25-25',
-            'soil_type' => 'Basah',
             'nitrogen' => 9,
             'phosphor' => 25,
             'kalium' => 25,
@@ -85,7 +78,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Mutiara Grower 15-9-20+TE',
-            'soil_type' => 'Basah',
             'nitrogen' => 15,
             'phosphor' => 9,
             'kalium' => 20,
@@ -95,7 +87,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Mutiara 16-16-16',
-            'soil_type' => 'Lembab',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
@@ -105,7 +96,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Mutiara Partner 13-13-24',
-            'soil_type' => 'Basah',
             'nitrogen' => 13,
             'phosphor' => 13,
             'kalium' => 24,
@@ -114,58 +104,7 @@ class AlternativeSeeder extends Seeder
         ]);
 
         Alternative::create([
-            'name' => 'Neo Kristalon Hijau',
-            'soil_type' => 'Lembab',
-            'nitrogen' => 18,
-            'phosphor' => 18,
-            'kalium' => 18,
-            'price' => 115000,
-            'created_at' => date('2023-04-03 15:38:40'),
-        ]);
-
-        Alternative::create([
-            'name' => 'Neo Kristalon Kuning',
-            'soil_type' => 'Basah',
-            'nitrogen' => 13,
-            'phosphor' => 40,
-            'kalium' => 13,
-            'price' => 80000,
-            'created_at' => date('2023-04-03 15:38:39'),
-        ]);
-
-        Alternative::create([
-            'name' => 'Neo Kristalon Merah',
-            'soil_type' => 'Basah',
-            'nitrogen' => 12,
-            'phosphor' => 12,
-            'kalium' => 36,
-            'price' => 80000,
-            'created_at' => date('2023-04-03 15:38:38'),
-        ]);
-
-        Alternative::create([
-            'name' => 'Fertila Padi-1',
-            'soil_type' => 'Basah',
-            'nitrogen' => 8,
-            'phosphor' => 18,
-            'kalium' => 18,
-            'price' => 60000,
-            'created_at' => date('2023-04-03 15:38:37'),
-        ]);
-
-        Alternative::create([
-            'name' => 'Fertila Padi-2',
-            'soil_type' => 'Basah',
-            'nitrogen' => 6,
-            'phosphor' => 18,
-            'kalium' => 28,
-            'price' => 60000,
-            'created_at' => date('2023-04-03 15:38:36'),
-        ]);
-
-        Alternative::create([
             'name' => 'NPK 15-15-15+TE',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -175,7 +114,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Holland 15-15-15',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -185,7 +123,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK 16-16-16 Merah',
-            'soil_type' => 'Lembab',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
@@ -195,7 +132,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK 16-16-16 Biru',
-            'soil_type' => 'Lembab',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
@@ -205,7 +141,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'Magnum',
-            'soil_type' => 'Basah',
             'nitrogen' => 15,
             'phosphor' => 10,
             'kalium' => 22,
@@ -215,7 +150,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Padi 21-14-7+2MgO+2S+TE',
-            'soil_type' => 'Lembab',
             'nitrogen' => 21,
             'phosphor' => 14,
             'kalium' => 7,
@@ -225,7 +159,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK-PIM 15-15-15',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -235,7 +168,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pusri 15-15-15',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -245,7 +177,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pelangi 20-10-10',
-            'soil_type' => 'Basah',
             'nitrogen' => 20,
             'phosphor' => 10,
             'kalium' => 10,
@@ -255,7 +186,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pelangi 12-12-17-2',
-            'soil_type' => 'Basah',
             'nitrogen' => 12,
             'phosphor' => 12,
             'kalium' => 17,
@@ -265,7 +195,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pelangi 13-6-27-4',
-            'soil_type' => 'Basah',
             'nitrogen' => 13,
             'phosphor' => 6,
             'kalium' => 27,
@@ -275,7 +204,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pelangi 15-15-6-4',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 6,
@@ -285,7 +213,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pelangi 15-15-15',
-            'soil_type' => 'Lembab',
             'nitrogen' => 15,
             'phosphor' => 15,
             'kalium' => 15,
@@ -295,7 +222,6 @@ class AlternativeSeeder extends Seeder
 
         Alternative::create([
             'name' => 'NPK Pelangi 16-16-16',
-            'soil_type' => 'Lembab',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,

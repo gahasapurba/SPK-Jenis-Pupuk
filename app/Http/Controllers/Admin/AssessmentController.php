@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Hashids\Hashids;
-use App\Models\Criteria;
 use App\Models\Alternative;
-use App\Models\Subcriteria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\Admin\StoreAssessmentRequest;
 use App\Http\Requests\Admin\UpdateAssessmentRequest;
 
 class AssessmentController extends Controller
@@ -106,13 +103,10 @@ class AssessmentController extends Controller
     {
         $hash = new Hashids('', 10);
         $item = Alternative::findOrFail($hash->decodeHex($assessment));
-        $soil_type_criteria = Criteria::where('name', 'Jenis Tanah')->first();
-        $soil_types = Subcriteria::where('criteria_criterias_id', $soil_type_criteria->id)->get();
 
         return view('pages.admin.assessment.edit', [
             'hash' => $hash,
             'item' => $item,
-            'soil_types' => $soil_types,
         ]);
     }
 
@@ -125,7 +119,6 @@ class AssessmentController extends Controller
         $item = Alternative::findOrFail($hash->decodeHex($assessment));
 
         $data = [
-            'soil_type' => $request->soil_type,
             'nitrogen' => $request->nitrogen,
             'phosphor' => $request->phosphor,
             'kalium' => $request->kalium,
