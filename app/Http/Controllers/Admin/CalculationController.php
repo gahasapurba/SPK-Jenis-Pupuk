@@ -28,11 +28,11 @@ class CalculationController extends Controller
 
         // Fuzifikasi Jenis Tanah
         for($i = 0; $i < count($dataAlternatifJenisTanah); $i++){
-            if($dataAlternatifJenisTanah[$i]->soil_type == "Basah"){
+            if($dataAlternatifJenisTanah[$i]->soil_type == "Tidak Subur"){
                 $arrayJenisTanah[$i] = 2;
-            }else if($dataAlternatifJenisTanah[$i]->soil_type == "Kering"){
+            }else if($dataAlternatifJenisTanah[$i]->soil_type == "Kurang Subur"){
                 $arrayJenisTanah[$i] = 3;
-            }else if($dataAlternatifJenisTanah[$i]->soil_type == "Lembab"){
+            }else if($dataAlternatifJenisTanah[$i]->soil_type == "Subur"){
                 $arrayJenisTanah[$i] = 5;
             }
         }
