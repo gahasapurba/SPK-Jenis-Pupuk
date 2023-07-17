@@ -47,7 +47,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 1,
-            'name' => '>=46%',
+            'name' => '>=45%',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
             'created_at' => date('2023-04-03 15:38:36'),

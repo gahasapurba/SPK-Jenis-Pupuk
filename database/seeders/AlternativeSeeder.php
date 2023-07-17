@@ -14,111 +14,12 @@ class AlternativeSeeder extends Seeder
     public function run(): void
     {
         Alternative::create([
-            'name' => 'NPK Phonska',
-            'nitrogen' => 15,
-            'phosphor' => 10,
-            'kalium' => 12,
-            'price' => 7000,
+            'name' => 'NPK 16-16-16 Biru',
+            'nitrogen' => 16,
+            'phosphor' => 16,
+            'kalium' => 16,
+            'price' => 21000,
             'created_at' => date('2023-04-03 15:38:50'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Phonska Plus 15-15-15',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 18000,
-            'created_at' => date('2023-04-03 15:38:49'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Kebomas 15-15-15',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 8500,
-            'created_at' => date('2023-04-03 15:38:48'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Petro Nitrat',
-            'nitrogen' => 16,
-            'phosphor' => 16,
-            'kalium' => 16,
-            'price' => 13000,
-            'created_at' => date('2023-04-03 15:38:47'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Petro Ningrat',
-            'nitrogen' => 12,
-            'phosphor' => 11,
-            'kalium' => 20,
-            'price' => 24000,
-            'created_at' => date('2023-04-03 15:38:46'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Mutiara Sprinter 20-10-10',
-            'nitrogen' => 20,
-            'phosphor' => 10,
-            'kalium' => 10,
-            'price' => 20000,
-            'created_at' => date('2023-04-03 15:38:45'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Mutiara Professional 9-25-25',
-            'nitrogen' => 9,
-            'phosphor' => 25,
-            'kalium' => 25,
-            'price' => 55000,
-            'created_at' => date('2023-04-03 15:38:44'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Mutiara Grower 15-9-20+TE',
-            'nitrogen' => 15,
-            'phosphor' => 9,
-            'kalium' => 20,
-            'price' => 22000,
-            'created_at' => date('2023-04-03 15:38:43'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Mutiara 16-16-16',
-            'nitrogen' => 16,
-            'phosphor' => 16,
-            'kalium' => 16,
-            'price' => 23000,
-            'created_at' => date('2023-04-03 15:38:42'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Mutiara Partner 13-13-24',
-            'nitrogen' => 13,
-            'phosphor' => 13,
-            'kalium' => 24,
-            'price' => 30000,
-            'created_at' => date('2023-04-03 15:38:41'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK 15-15-15+TE',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 14000,
-            'created_at' => date('2023-04-03 15:38:35'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Holland 15-15-15',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 25000,
-            'created_at' => date('2023-04-03 15:38:34'),
         ]);
 
         Alternative::create([
@@ -127,97 +28,25 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 16,
             'kalium' => 16,
             'price' => 21000,
-            'created_at' => date('2023-04-03 15:38:33'),
+            'created_at' => date('2023-04-03 15:38:49'),
         ]);
 
         Alternative::create([
-            'name' => 'NPK 16-16-16 Biru',
+            'name' => 'NPK Mutiara 16-16-16',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
-            'price' => 21500,
-            'created_at' => date('2023-04-03 15:38:32'),
+            'price' => 23000,
+            'created_at' => date('2023-04-03 15:38:48'),
         ]);
 
         Alternative::create([
-            'name' => 'Magnum',
-            'nitrogen' => 15,
-            'phosphor' => 10,
-            'kalium' => 22,
-            'price' => 21000,
-            'created_at' => date('2023-04-03 15:38:31'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Padi 21-14-7+2MgO+2S+TE',
-            'nitrogen' => 21,
-            'phosphor' => 14,
-            'kalium' => 7,
-            'price' => 16000,
-            'created_at' => date('2023-04-03 15:38:30'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK-PIM 15-15-15',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 7000,
-            'created_at' => date('2023-04-03 15:38:29'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Pusri 15-15-15',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 12000,
-            'created_at' => date('2023-04-03 15:38:28'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Pelangi 20-10-10',
-            'nitrogen' => 20,
-            'phosphor' => 10,
-            'kalium' => 10,
-            'price' => 15000,
-            'created_at' => date('2023-04-03 15:38:27'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Pelangi 12-12-17-2',
-            'nitrogen' => 12,
-            'phosphor' => 12,
-            'kalium' => 17,
-            'price' => 10000,
-            'created_at' => date('2023-04-03 15:38:26'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Pelangi 13-6-27-4',
+            'name' => 'NPK Mutiara Partner 13-13-24',
             'nitrogen' => 13,
-            'phosphor' => 6,
-            'kalium' => 27,
-            'price' => 32000,
-            'created_at' => date('2023-04-03 15:38:25'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Pelangi 15-15-6-4',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 6,
-            'price' => 6000,
-            'created_at' => date('2023-04-03 15:38:24'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Pelangi 15-15-15',
-            'nitrogen' => 15,
-            'phosphor' => 15,
-            'kalium' => 15,
-            'price' => 8000,
-            'created_at' => date('2023-04-03 15:38:23'),
+            'phosphor' => 13,
+            'kalium' => 24,
+            'price' => 30000,
+            'created_at' => date('2023-04-03 15:38:47'),
         ]);
 
         Alternative::create([
@@ -225,8 +54,152 @@ class AlternativeSeeder extends Seeder
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
-            'price' => 9000,
-            'created_at' => date('2023-04-03 15:38:22'),
+            'price' => 16500,
+            'created_at' => date('2023-04-03 15:38:46'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Mutiara Profesional 9-25-25',
+            'nitrogen' => 9,
+            'phosphor' => 25,
+            'kalium' => 25,
+            'price' => 55000,
+            'created_at' => date('2023-04-03 15:38:45'),
+        ]);
+
+        Alternative::create([
+            'name' => 'Urea',
+            'nitrogen' => 46,
+            'phosphor' => 0,
+            'kalium' => 0,
+            'price' => 10000,
+            'created_at' => date('2023-04-03 15:38:44'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Phonska',
+            'nitrogen' => 15,
+            'phosphor' => 10,
+            'kalium' => 12,
+            'price' => 10000,
+            'created_at' => date('2023-04-03 15:38:43'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK 15-15-15 + TE',
+            'nitrogen' => 15,
+            'phosphor' => 15,
+            'kalium' => 15,
+            'price' => 16000,
+            'created_at' => date('2023-04-03 15:38:42'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Kebomas 15-15-15',
+            'nitrogen' => 15,
+            'phosphor' => 15,
+            'kalium' => 15,
+            'price' => 13000,
+            'created_at' => date('2023-04-03 15:38:41'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Holland 15-15-15',
+            'nitrogen' => 15,
+            'phosphor' => 15,
+            'kalium' => 15,
+            'price' => 36000,
+            'created_at' => date('2023-04-03 15:38:40'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Mutiara Sprinter 20-10-10',
+            'nitrogen' => 20,
+            'phosphor' => 10,
+            'kalium' => 10,
+            'price' => 24000,
+            'created_at' => date('2023-04-03 15:38:39'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Padi 21-14-7',
+            'nitrogen' => 21,
+            'phosphor' => 14,
+            'kalium' => 7,
+            'price' => 22288,
+            'created_at' => date('2023-04-03 15:38:38'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Pelangi 20-10-10',
+            'nitrogen' => 20,
+            'phosphor' => 10,
+            'kalium' => 10,
+            'price' => 18000,
+            'created_at' => date('2023-04-03 15:38:37'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Phonska Plus 15-15-15',
+            'nitrogen' => 15,
+            'phosphor' => 15,
+            'kalium' => 15,
+            'price' => 16625,
+            'created_at' => date('2023-04-03 15:38:36'),
+        ]);
+
+        Alternative::create([
+            'name' => 'NPK Pusri 15-15-15',
+            'nitrogen' => 15,
+            'phosphor' => 15,
+            'kalium' => 15,
+            'price' => 17400,
+            'created_at' => date('2023-04-03 15:38:35'),
+        ]);
+
+        Alternative::create([
+            'name' => 'ZK Petro',
+            'nitrogen' => 0,
+            'phosphor' => 0,
+            'kalium' => 50,
+            'price' => 26000,
+            'created_at' => date('2023-04-03 15:38:34'),
+        ]);
+
+        Alternative::create([
+            'name' => 'SP-36 Petro',
+            'nitrogen' => 0,
+            'phosphor' => 36,
+            'kalium' => 0,
+            'price' => 19000,
+            'created_at' => date('2023-04-03 15:38:33'),
+        ]);
+
+        Alternative::create([
+            'name' => 'ZA Petro',
+            'nitrogen' => 21,
+            'phosphor' => 0,
+            'kalium' => 0,
+            'price' => 16000,
+            'created_at' => date('2023-04-03 15:38:32'),
+        ]);
+
+        Alternative::create([
+            'name' => 'SP-26 Petro',
+            'nitrogen' => 0,
+            'phosphor' => 26,
+            'kalium' => 0,
+            'price' => 16000,
+            'created_at' => date('2023-04-03 15:38:31'),
+        ]);
+
+        Alternative::create([
+            'name' => 'Fosfat Phosgreen',
+            'nitrogen' => 0,
+            'phosphor' => 20,
+            'kalium' => 0,
+            'price' => 15000,
+            'created_at' => date('2023-04-03 15:38:30'),
         ]);
     }
 }

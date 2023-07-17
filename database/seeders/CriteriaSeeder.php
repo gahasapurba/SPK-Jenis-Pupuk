@@ -16,7 +16,7 @@ class CriteriaSeeder extends Seeder
         Criteria::create([
             'code' => 'C1',
             'name' => 'Kandungan N',
-            'weight' => 0.31,
+            'weight' => 0.38,
             'type' => 'Benefit',
             'created_at' => date('2023-04-03 15:38:48'),
         ]);
@@ -24,7 +24,7 @@ class CriteriaSeeder extends Seeder
         Criteria::create([
             'code' => 'C2',
             'name' => 'Kandungan P',
-            'weight' => 0.32,
+            'weight' => 0.27,
             'type' => 'Benefit',
             'created_at' => date('2023-04-03 15:38:47'),
         ]);
@@ -32,7 +32,7 @@ class CriteriaSeeder extends Seeder
         Criteria::create([
             'code' => 'C3',
             'name' => 'Kandungan K',
-            'weight' => 0.27,
+            'weight' => 0.29,
             'type' => 'Benefit',
             'created_at' => date('2023-04-03 15:38:46'),
         ]);
@@ -40,7 +40,7 @@ class CriteriaSeeder extends Seeder
         Criteria::create([
             'code' => 'C4',
             'name' => 'Harga Pupuk',
-            'weight' => 0.10,
+            'weight' => 0.06,
             'type' => 'Cost',
             'created_at' => date('2023-04-03 15:38:45'),
         ]);
