@@ -14,39 +14,12 @@ class AlternativeSeeder extends Seeder
     public function run(): void
     {
         Alternative::create([
-            'name' => 'NPK 16-16-16 Biru',
-            'nitrogen' => 16,
-            'phosphor' => 16,
-            'kalium' => 16,
-            'price' => 21000,
-            'created_at' => date('2023-04-03 15:38:50'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK 16-16-16 Merah',
-            'nitrogen' => 16,
-            'phosphor' => 16,
-            'kalium' => 16,
-            'price' => 21000,
-            'created_at' => date('2023-04-03 15:38:49'),
-        ]);
-
-        Alternative::create([
             'name' => 'NPK Mutiara 16-16-16',
             'nitrogen' => 16,
             'phosphor' => 16,
             'kalium' => 16,
             'price' => 23000,
             'created_at' => date('2023-04-03 15:38:48'),
-        ]);
-
-        Alternative::create([
-            'name' => 'NPK Mutiara Partner 13-13-24',
-            'nitrogen' => 13,
-            'phosphor' => 13,
-            'kalium' => 24,
-            'price' => 30000,
-            'created_at' => date('2023-04-03 15:38:47'),
         ]);
 
         Alternative::create([
