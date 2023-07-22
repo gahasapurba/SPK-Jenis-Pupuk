@@ -32,9 +32,9 @@ class CalculationController extends Controller
                 $arrayKandunganN[$i] = 2;
             }else if($dataAlternatifKandunganN[$i]->nitrogen >= 10 && $dataAlternatifKandunganN[$i]->nitrogen < 25){
                 $arrayKandunganN[$i] = 3;
-            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 25 && $dataAlternatifKandunganN[$i]->nitrogen < 45){
+            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 25 && $dataAlternatifKandunganN[$i]->nitrogen <= 46){
                 $arrayKandunganN[$i] = 4;
-            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 45){
+            }else if($dataAlternatifKandunganN[$i]->nitrogen > 46){
                 $arrayKandunganN[$i] = 5;
             }
         }
