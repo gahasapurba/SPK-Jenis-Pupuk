@@ -19,7 +19,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 10,
             'kalium' => 12,
             'price' => 10000,
-            'created_at' => date('2023-04-03 15:38:43'),
+            'created_at' => date('2023-04-03 15:38:39'),
         ]);
 
         Alternative::create([
@@ -28,7 +28,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 15,
             'kalium' => 15,
             'price' => 16625,
-            'created_at' => date('2023-04-03 15:38:36'),
+            'created_at' => date('2023-04-03 15:38:38'),
         ]);
 
         Alternative::create([
@@ -37,7 +37,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 15,
             'kalium' => 15,
             'price' => 13000,
-            'created_at' => date('2023-04-03 15:38:41'),
+            'created_at' => date('2023-04-03 15:38:37'),
         ]);
 
         Alternative::create([
@@ -46,7 +46,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 0,
             'kalium' => 0,
             'price' => 16000,
-            'created_at' => date('2023-04-03 15:38:32'),
+            'created_at' => date('2023-04-03 15:38:36'),
         ]);
 
         Alternative::create([
@@ -55,7 +55,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 26,
             'kalium' => 0,
             'price' => 16000,
-            'created_at' => date('2023-04-03 15:38:31'),
+            'created_at' => date('2023-04-03 15:38:35'),
         ]);
 
         Alternative::create([
@@ -64,7 +64,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 36,
             'kalium' => 0,
             'price' => 19000,
-            'created_at' => date('2023-04-03 15:38:33'),
+            'created_at' => date('2023-04-03 15:38:34'),
         ]);
 
         Alternative::create([
@@ -73,7 +73,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 0,
             'kalium' => 0,
             'price' => 10000,
-            'created_at' => date('2023-04-03 15:38:44'),
+            'created_at' => date('2023-04-03 15:38:33'),
         ]);
 
         Alternative::create([
@@ -82,7 +82,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 0,
             'kalium' => 50,
             'price' => 26000,
-            'created_at' => date('2023-04-03 15:38:34'),
+            'created_at' => date('2023-04-03 15:38:32'),
         ]);
 
         Alternative::create([
@@ -91,7 +91,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 20,
             'kalium' => 0,
             'price' => 15000,
-            'created_at' => date('2023-04-03 15:38:30'),
+            'created_at' => date('2023-04-03 15:38:31'),
         ]);
 
         Alternative::create([
@@ -100,7 +100,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 10,
             'kalium' => 10,
             'price' => 24000,
-            'created_at' => date('2023-04-03 15:38:39'),
+            'created_at' => date('2023-04-03 15:38:30'),
         ]);
 
         Alternative::create([
@@ -109,7 +109,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 25,
             'kalium' => 25,
             'price' => 55000,
-            'created_at' => date('2023-04-03 15:38:45'),
+            'created_at' => date('2023-04-03 15:38:29'),
         ]);
 
         Alternative::create([
@@ -118,7 +118,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 16,
             'kalium' => 16,
             'price' => 23000,
-            'created_at' => date('2023-04-03 15:38:48'),
+            'created_at' => date('2023-04-03 15:38:28'),
         ]);
 
         Alternative::create([
@@ -127,7 +127,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 15,
             'kalium' => 15,
             'price' => 16000,
-            'created_at' => date('2023-04-03 15:38:42'),
+            'created_at' => date('2023-04-03 15:38:27'),
         ]);
 
         Alternative::create([
@@ -136,7 +136,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 15,
             'kalium' => 15,
             'price' => 36000,
-            'created_at' => date('2023-04-03 15:38:40'),
+            'created_at' => date('2023-04-03 15:38:26'),
         ]);
 
         Alternative::create([
@@ -145,7 +145,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 14,
             'kalium' => 7,
             'price' => 22288,
-            'created_at' => date('2023-04-03 15:38:38'),
+            'created_at' => date('2023-04-03 15:38:25'),
         ]);
 
         Alternative::create([
@@ -154,7 +154,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 15,
             'kalium' => 15,
             'price' => 17400,
-            'created_at' => date('2023-04-03 15:38:35'),
+            'created_at' => date('2023-04-03 15:38:24'),
         ]);
 
         Alternative::create([
@@ -163,7 +163,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 10,
             'kalium' => 10,
             'price' => 18000,
-            'created_at' => date('2023-04-03 15:38:37'),
+            'created_at' => date('2023-04-03 15:38:23'),
         ]);
 
         Alternative::create([
@@ -172,7 +172,7 @@ class AlternativeSeeder extends Seeder
             'phosphor' => 16,
             'kalium' => 16,
             'price' => 16500,
-            'created_at' => date('2023-04-03 15:38:46'),
+            'created_at' => date('2023-04-03 15:38:22'),
         ]);
     }
 }

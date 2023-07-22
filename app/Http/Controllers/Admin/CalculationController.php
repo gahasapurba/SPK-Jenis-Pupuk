@@ -26,13 +26,13 @@ class CalculationController extends Controller
 
         // Fuzifikasi Kandungan N
         for($i = 0; $i < count($dataAlternatifKandunganN); $i++){
-            if($dataAlternatifKandunganN[$i]->nitrogen >= 0 && $dataAlternatifKandunganN[$i]->nitrogen < 1){
+            if($dataAlternatifKandunganN[$i]->nitrogen >= 0 && $dataAlternatifKandunganN[$i]->nitrogen <= 1){
                 $arrayKandunganN[$i] = 1;
-            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 1 && $dataAlternatifKandunganN[$i]->nitrogen < 10){
+            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 2 && $dataAlternatifKandunganN[$i]->nitrogen <= 10){
                 $arrayKandunganN[$i] = 2;
-            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 10 && $dataAlternatifKandunganN[$i]->nitrogen < 25){
+            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 11 && $dataAlternatifKandunganN[$i]->nitrogen <= 25){
                 $arrayKandunganN[$i] = 3;
-            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 25 && $dataAlternatifKandunganN[$i]->nitrogen <= 46){
+            }else if($dataAlternatifKandunganN[$i]->nitrogen >= 26 && $dataAlternatifKandunganN[$i]->nitrogen <= 46){
                 $arrayKandunganN[$i] = 4;
             }else if($dataAlternatifKandunganN[$i]->nitrogen > 46){
                 $arrayKandunganN[$i] = 5;
@@ -73,11 +73,11 @@ class CalculationController extends Controller
         for($i = 0; $i < count($dataAlternatifHarga); $i++){
             if($dataAlternatifHarga[$i]->price < 2800){
                 $arrayHarga[$i] = 1;
-            }else if($dataAlternatifHarga[$i]->price >= 2800 && $dataAlternatifHarga[$i]->price < 7200){
+            }else if($dataAlternatifHarga[$i]->price >= 2800 && $dataAlternatifHarga[$i]->price <= 7200){
                 $arrayHarga[$i] = 2;
-            }else if($dataAlternatifHarga[$i]->price >= 7200 && $dataAlternatifHarga[$i]->price < 11600){
+            }else if($dataAlternatifHarga[$i]->price >= 7300 && $dataAlternatifHarga[$i]->price <= 11600){
                 $arrayHarga[$i] = 3;
-            }else if($dataAlternatifHarga[$i]->price >= 11600 && $dataAlternatifHarga[$i]->price <= 16000){
+            }else if($dataAlternatifHarga[$i]->price >= 11700 && $dataAlternatifHarga[$i]->price <= 16000){
                 $arrayHarga[$i] = 4;
             }else if($dataAlternatifHarga[$i]->price > 16000){
                 $arrayHarga[$i] = 5;

@@ -23,7 +23,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 1,
-            'name' => '1-10%',
+            'name' => '2-10%',
             'variable' => 'Rendah',
             'value' => 2,
             'created_at' => date('2023-04-03 15:38:39'),
@@ -31,7 +31,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 1,
-            'name' => '10-25%',
+            'name' => '11-25%',
             'variable' => 'Sedang',
             'value' => 3,
             'created_at' => date('2023-04-03 15:38:38'),
@@ -39,7 +39,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 1,
-            'name' => '25-45%',
+            'name' => '26-46%',
             'variable' => 'Tinggi',
             'value' => 4,
             'created_at' => date('2023-04-03 15:38:37'),
@@ -47,7 +47,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 1,
-            'name' => '>=45%',
+            'name' => '>46%',
             'variable' => 'Sangat Tinggi',
             'value' => 5,
             'created_at' => date('2023-04-03 15:38:36'),
@@ -119,7 +119,7 @@ class SubcriteriaSeeder extends Seeder
 
         Subcriteria::create([
             'criteria_criterias_id' => 3,
-            'name' => '30-45%',
+            'name' => '31-45%',
             'variable' => 'Tinggi',
             'value' => 4,
             'created_at' => date('2023-04-03 15:38:27'),
