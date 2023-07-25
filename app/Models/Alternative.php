@@ -14,7 +14,6 @@ class Alternative extends Model
     protected $fillable = [
         'name',
         'rainfall',
-        'soil_type',
         'nitrogen',
         'phosphor',
         'kalium',
