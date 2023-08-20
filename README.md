@@ -1,9 +1,4 @@
-<a name="readme-top"></a>
-<br />
 <div align="center">
-  <a href="#">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">SPK Jenis Pupuk</h3>
 
@@ -16,7 +11,7 @@
 
 Studi Sistem Pendukung Keputusan Untuk Menentukan Jenis Pupuk Buatan Pada Tanaman Padi Menggunakan Metode Complex Proportional Assessment (COPRAS)
 
-### Jenis Sistem / Aplikasi
+## Jenis Sistem / Aplikasi
 
 Aplikasi Website.
 
@@ -27,7 +22,7 @@ Berikut spesifikasi minimal yang dibutuhkan perangkat untuk instalasi aplikasi:
 * Memori : 8 GB
 * Prosesor : Intel Core i5
 
-### Requirements
+## Requirements
 
 Berikut beberapa tools yang harus sudah di-install sebelumnya pada perangkat untuk instalasi aplikasi:
 * Git
@@ -35,7 +30,7 @@ Berikut beberapa tools yang harus sudah di-install sebelumnya pada perangkat unt
 * Node.js
 * Composer
 
-### Instalasi
+## Instalasi
 
 Berikut beberapa tools yang harus sudah di-install sebelumnya pada perangkat untuk instalasi aplikasi:
 
@@ -82,10 +77,10 @@ Berikut beberapa tools yang harus sudah di-install sebelumnya pada perangkat unt
 
 ## Daftar User Type
 
-1. Role Administrator
+1. Role Administrator ->
    Email : gahasapurba.tech@gmail.com
    Kata Sandi : spkjenispupuk123456
 
-2. Role User
+2. Role User ->
    Email : gahasapurba.social@gmail.com
    Kata Sandi : gahasa123456
