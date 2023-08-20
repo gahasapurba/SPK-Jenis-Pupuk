@@ -32,7 +32,7 @@ Berikut beberapa tools yang harus sudah di-install sebelumnya pada perangkat unt
 
 ## Instalasi
 
-Berikut beberapa tools yang harus sudah di-install sebelumnya pada perangkat untuk instalasi aplikasi:
+Berikut langkah-langkah instalasi aplikasi pada perangkat:
 
 1. Jalankan XAMPP dengan mengklik tombol "Start" pada module "Apache" dan "MySQL"
 2. Buka CMD di direktori yang anda inginkan
