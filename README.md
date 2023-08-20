@@ -74,6 +74,7 @@ Berikut langkah-langkah instalasi aplikasi pada perangkat:
    ```sh
    php artisan serve
    ```
+14. Akses http://localhost:8000 di browser
 
 ## Daftar User Type
 
