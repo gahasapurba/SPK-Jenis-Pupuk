@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h3 align="center">SPK Jenis Pupuk</h3>
+  <h1 align="center">SPK Jenis Pupuk</h1>
 
   <p align="center">
     Sistem Pendukung Keputusan Untuk Menentukan Jenis Pupuk Buatan Pada Tanaman Padi
